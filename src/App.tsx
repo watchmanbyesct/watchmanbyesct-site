@@ -162,8 +162,6 @@ function Hero() {
           letterSpacing: '-0.03em',
           color: '#fff',
           marginBottom: 24,
-          maxWidth: 820,
-          marginBottom: 24,
         }}>
           Security operations,{' '}
           <span style={{ background: 'linear-gradient(135deg,#d9b54a,#c4912a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
