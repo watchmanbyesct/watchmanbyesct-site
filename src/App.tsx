@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import WatchmanLaunch from './pages/WatchmanLaunch'
+import WatchmanOperations from './pages/WatchmanOperations'
 import { createClient } from '@supabase/supabase-js'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
@@ -233,7 +236,7 @@ const PRODUCTS = [
     tagline: 'Training Enrollment Platform',
     desc: 'The complete training management solution for security guard academies. Manage courses, enrollments, payments, and certifications in one place.',
     features: ['DCJS-compliant course management', 'Online enrollment with Stripe', 'Automated email confirmations', 'Student records and certificates', 'Full admin CMS', 'Multi-role access control'],
-    cta: 'Visit Watchman Launch', href: 'https://esctroc.com', external: true, highlight: false,
+    cta: 'Learn More', href: '/launch', external: false, highlight: false,
   },
   {
     badge: 'In Development', badgeColor: GOLD,
@@ -241,7 +244,7 @@ const PRODUCTS = [
     tagline: 'Security Operations Platform',
     desc: 'Real-time operations management for guard companies. Shift scheduling, post orders, incident tracking, and client reporting built for the field.',
     features: ['Guard scheduling and deployment', 'Post orders and site management', 'Incident reporting and escalation', 'Client portal and reporting', 'Mobile-ready for field use', 'Multi-site and multi-client'],
-    cta: 'Request Early Access', href: '#demo', external: false, highlight: true,
+    cta: 'Learn More', href: '/operations', external: false, highlight: true,
   },
 ]
 
@@ -538,7 +541,7 @@ function Footer() {
 }
 
 // ── App ───────────────────────────────────────────────────────────────────────
-export default function App() {
+function Home() {
   return (
     <div style={{ background: '#060606', minHeight: '100vh' }}>
       <style>{`
@@ -576,5 +579,28 @@ export default function App() {
       <DemoForm />
       <Footer />
     </div>
+  )
+}
+
+// ── App ───────────────────────────────────────────────────────────────────────
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/launch" element={<WatchmanLaunch />} />
+      <Route path="/operations" element={<WatchmanOperations />} />
+    </Routes>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/launch" element={<WatchmanLaunch />} />
+        <Route path="/operations" element={<WatchmanOperations />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
