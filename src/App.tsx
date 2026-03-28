@@ -593,14 +593,3 @@ export default function App() {
   )
 }
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/launch" element={<WatchmanLaunch />} />
-        <Route path="/operations" element={<WatchmanOperations />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
