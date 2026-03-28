@@ -195,6 +195,7 @@ export default function WatchmanLaunch() {
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginBottom: 32, lineHeight: 1.65 }}>Visit the live platform at esctroc.com or contact us to schedule a personalized walkthrough.</p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="https://esctroc.com" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>Visit Watchman Launch <ArrowRight size={16} /></a>
+            <a href="/Watchman_Launch_Spec_Sheet.pdf" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>Download Spec Sheet</a>
             <a href="mailto:info@watchmanbyesct.com" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>Email Us</a>
           </div>
         </div>
