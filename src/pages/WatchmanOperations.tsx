@@ -79,7 +79,7 @@ const SEGMENTS = [
 export default function WatchmanOperations() {
   return (
     <div style={{ background: '#060606', minHeight: '100vh', fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif', color: '#fff', WebkitFontSmoothing: 'antialiased' }}>
-      <style>{`*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; }`}</style>
+      <style>{`@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"); *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; } body { font-family: Inter, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }`}</style>
       <Nav />
 
       <section style={{ padding: '120px 24px 80px', background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,67,0.09), transparent 60%)' }}>
