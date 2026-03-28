@@ -398,7 +398,7 @@ function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'var(--gold)' }}>About the Maker</p>
-            <h2 className="mb-6" style={{ fontFamily: 'Syne', fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 800, color: '#fff', lineHeight: 1.1 }}>
+            <h2 className="mb-6" style={{ fontFamily: 'Syne', fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 800, color: "#fff", lineHeight: 1.15 }}>
               Built by Enterprise Security Consulting and Training Inc.
             </h2>
             <p className="mb-5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
