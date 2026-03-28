@@ -102,10 +102,7 @@ function Nav() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <a href="https://esctroc.com" target="_blank" rel="noopener" className="hide-mobile"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', padding: '7px 12px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.1)' }}>
-            <ExternalLink size={12} /> esctroc.com
-          </a>
+
           <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
             Request Demo
           </a>
@@ -157,15 +154,12 @@ function Hero() {
           color: '#fff',
           marginBottom: 20,
         }}>
-          Security operations,{' '}
-          <span style={{ background: `linear-gradient(135deg,${GOLD},#e8c06a)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-            elevated.
-          </span>
+          Security operations, <span style={{ background: `linear-gradient(135deg,${GOLD},#e8c06a)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>elevated.</span>
         </h1>
 
         {/* Subhead */}
         <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 580, margin: '0 auto 36px', fontWeight: 400 }}>
-          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations — combining training management, operations, and compliance in one unified system.
+          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, operations, and compliance in one unified system.
         </p>
 
         {/* CTAs */}
@@ -178,28 +172,15 @@ function Hero() {
           </a>
         </div>
 
-        {/* Logo — below CTAs, blended */}
-        <div style={{ marginBottom: 48 }}>
+        {/* Logo below CTAs */}
+        <div style={{ marginTop: 40 }}>
           <img
             src="/watchman-logo.png"
             alt="Watchman by ESCT"
-            style={{ width: 240, height: 240, objectFit: 'contain', display: 'block', margin: '0 auto', mixBlendMode: 'lighten' }}
+            style={{ width: 400, height: 400, objectFit: 'contain', display: 'block', margin: '0 auto', mixBlendMode: 'lighten' as any }}
           />
         </div>
 
-        {/* Stats bar */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 1, borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.06)', maxWidth: 520, margin: '0 auto' }}>
-          {[
-            { value: '1998', label: 'Founded' },
-            { value: 'NYS', label: 'Licensed & DCJS' },
-            { value: '3', label: 'Offices' },
-          ].map((s, i) => (
-            <div key={i} style={{ padding: '18px 12px', textAlign: 'center', background: '#0d0d0d' }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: GOLD, marginBottom: 3 }}>{s.value}</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.38)', fontWeight: 500, letterSpacing: '0.5px' }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
@@ -207,7 +188,7 @@ function Hero() {
 
 // ── Platform ──────────────────────────────────────────────────────────────────
 const FEATURES = [
-  { icon: BookOpen, title: 'Training Management', desc: 'DCJS-compliant course enrollment, scheduling, attendance, and certificate generation — end to end.' },
+  { icon: BookOpen, title: 'Training Management', desc: 'DCJS-compliant course enrollment, scheduling, attendance, and certificate generation, end to end.' },
   { icon: Radio, title: 'Operations Control', desc: 'Shift scheduling, post orders, incident reporting, and real-time guard management from one dashboard.' },
   { icon: FileText, title: 'Compliance & Records', desc: 'Automated documentation, audit trails, and regulatory reporting aligned to NYS requirements.' },
   { icon: Users, title: 'Multi-Tenant Ready', desc: 'Each client organization gets an isolated workspace with role-based access control.' },
@@ -317,7 +298,7 @@ function WhoWeServe() {
         <div style={{ marginBottom: 48 }}>
           <SectionLabel>Who We Serve</SectionLabel>
           <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em' }}>
-            Built for organizations that protect people
+            Built for organizations that protect people and assets
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 14 }}>
@@ -369,7 +350,7 @@ function Pricing() {
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>Contact us for a quote tailored to your organization's needs.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: 14, alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: 14, alignItems: 'start', maxWidth: 960, margin: '0 auto' }}>
           {PLANS.map(p => (
             <Card key={p.name} highlight={p.highlight} style={{ display: 'flex', flexDirection: 'column' }}>
               {p.highlight && (
@@ -416,13 +397,13 @@ function About() {
               ESCT Holdings Inc.
             </h2>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, marginBottom: 14 }}>
-              Enterprise Security Consulting and Training Inc. is a NYS licensed security firm and DCJS-certified training academy established in 1998. Owens F. Shepard — U.S. Army veteran, licensed investigator, and DCJS-certified trainer — brings decades of field experience to every product ESCT builds.
+              Enterprise Security Consulting and Training Inc. is a NYS licensed security firm and DCJS-certified training academy established in 1998. Owens F. Shepard, U.S. Army veteran, licensed investigator, and DCJS-certified trainer, brings decades of field experience to every product ESCT builds.
             </p>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, marginBottom: 24 }}>
-              Watchman was born from the operational reality of running a security company — the need for a platform that understands compliance, training, and field operations from the inside out.
+              Watchman was born from the operational reality of running a security company, the need for a platform built for compliance, training, and field operations from the inside out.
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {['Rochester, NY — HQ', 'Kingston, NY', 'Manhattan, NYC'].map(loc => (
+              {['Rochester, NY, HQ', 'Kingston, NY', 'Manhattan, NYC'].map(loc => (
                 <span key={loc} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 500, padding: '5px 11px', borderRadius: 999, background: 'rgba(212,168,67,0.05)', color: GOLD, border: '1px solid rgba(212,168,67,0.18)' }}>
                   <MapPin size={10} /> {loc}
                 </span>
@@ -432,10 +413,10 @@ function About() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { value: '26+', label: 'Years in security' },
-              { value: '281222', label: 'DCJS School Code' },
-              { value: 'NYS', label: 'Licensed & certified' },
-              { value: '3', label: 'Office locations' },
+              { value: '40+', label: 'Years in security' },
+              { value: 'U.S. Army', label: 'Veteran' },
+              { value: 'NYS', label: 'Licensed Private Investigator' },
+              { value: 'DCJS', label: 'Certified Trainer' },
             ].map(s => (
               <Card key={s.label}>
                 <p style={{ fontSize: 26, fontWeight: 700, color: GOLD, marginBottom: 5 }}>{s.value}</p>
@@ -466,7 +447,7 @@ function DemoForm() {
     }
     setLoading(true); setError('')
     const { error: dbErr } = await supabase.from('demo_requests').insert({ ...form, source: 'watchmanbyesct.com', status: 'new' })
-    if (dbErr) { setError('Something went wrong. Please email oshepard@esctroc.com directly.'); setLoading(false); return }
+    if (dbErr) { setError('Something went wrong. Please email info@watchmanbyesct.com directly.'); setLoading(false); return }
     setSuccess(true); setLoading(false)
   }
 
@@ -526,7 +507,7 @@ function DemoForm() {
               </button>
               <p style={{ textAlign: 'center', fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
                 We respond within one business day ·{' '}
-                <a href="mailto:oshepard@esctroc.com" style={{ color: GOLD, textDecoration: 'none' }}>oshepard@esctroc.com</a>
+                <a href="mailto:info@watchmanbyesct.com" style={{ color: GOLD, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
               </p>
             </form>
           </Card>
