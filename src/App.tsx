@@ -89,12 +89,7 @@ function Nav() {
       <div style={{ ...maxW, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
         {/* Logo */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <div style={{ width: 32, height: 32, borderRadius: 10, background: 'linear-gradient(135deg,#d9b54a,#9b7a2b)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <Shield size={16} color="#000" strokeWidth={2.5} />
-          </div>
-          <span style={{ fontFamily: 'Syne, sans-serif', fontSize: 15, fontWeight: 800, color: '#fff', letterSpacing: '-0.01em' }}>
-            Watchman <span style={{ color: '#d9b54a', fontWeight: 500 }}>by ESCT</span>
-          </span>
+          <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 40, width: 'auto', objectFit: 'contain' }} />
         </a>
 
         {/* Desktop nav */}
@@ -140,13 +135,16 @@ function Nav() {
 function Hero() {
   return (
     <section style={{
-      minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      minHeight: '100vh', display: 'flex', alignItems: 'center',
       padding: '120px 24px 80px', position: 'relative', overflow: 'hidden',
     }}>
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 55% at 50% -5%, rgba(217,181,74,0.12), transparent 65%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 40% at 80% 80%, rgba(155,122,43,0.06), transparent 60%)', pointerEvents: 'none' }} />
 
-      <div style={{ ...maxW, textAlign: 'center', position: 'relative' }}>
+      <div style={{ ...maxW, position: 'relative' }}>
+        {/* Logo image */}
+        <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 160, width: 'auto', objectFit: 'contain', marginBottom: 24, display: 'block' }} />
+
         {/* Badge */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 999, border: '1px solid rgba(217,181,74,0.25)', background: 'rgba(217,181,74,0.06)', marginBottom: 32 }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#d9b54a', display: 'inline-block' }} />
@@ -158,14 +156,14 @@ function Hero() {
         {/* Headline */}
         <h1 style={{
           fontFamily: 'Syne, sans-serif',
-          fontSize: 'clamp(2.8rem, 6vw, 5rem)',
+          fontSize: 'clamp(2rem, 3.5vw, 3rem)',
           fontWeight: 800,
           lineHeight: 1.05,
           letterSpacing: '-0.03em',
           color: '#fff',
           marginBottom: 24,
           maxWidth: 820,
-          margin: '0 auto 24px',
+          marginBottom: 24,
         }}>
           Security operations,{' '}
           <span style={{ background: 'linear-gradient(135deg,#d9b54a,#c4912a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
@@ -174,12 +172,12 @@ function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p style={{ fontSize: 'clamp(1rem,1.6vw,1.15rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 560, margin: '0 auto 40px', fontWeight: 300 }}>
+        <p style={{ fontSize: 'clamp(1rem,1.6vw,1.15rem)', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 560, margin: '0 0 40px', fontWeight: 300 }}>
           Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations — combining training management, operations, and compliance in one unified system.
         </p>
 
         {/* CTAs */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 64 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginBottom: 64 }}>
           <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', borderRadius: 12, fontWeight: 800, fontSize: 14, color: '#111', background: 'linear-gradient(135deg,#d9b54a,#9b7a2b)', textDecoration: 'none' }}>
             <ArrowRight size={16} /> Request a Demo
           </a>
