@@ -140,15 +140,6 @@ function Hero() {
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,0.1), transparent 65%)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: 760, position: 'relative' }}>
-        {/* Logo — prominent and centered */}
-        <div style={{ marginBottom: 32 }}>
-          <img
-            src="/watchman-logo.png"
-            alt="Watchman by ESCT"
-            style={{ width: 200, height: 200, objectFit: 'contain', display: 'block', margin: '0 auto' }}
-          />
-        </div>
-
         {/* Badge */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '5px 14px', borderRadius: 999, border: `1px solid rgba(212,168,67,0.2)`, background: 'rgba(212,168,67,0.05)', marginBottom: 28 }}>
           <span style={{ width: 5, height: 5, borderRadius: '50%', background: GOLD, display: 'inline-block' }} />
@@ -185,6 +176,15 @@ function Hero() {
           <a href="#products" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>
             Explore Products <ChevronRight size={16} />
           </a>
+        </div>
+
+        {/* Logo — below CTAs, blended */}
+        <div style={{ marginBottom: 48 }}>
+          <img
+            src="/watchman-logo.png"
+            alt="Watchman by ESCT"
+            style={{ width: 240, height: 240, objectFit: 'contain', display: 'block', margin: '0 auto', mixBlendMode: 'lighten' }}
+          />
         </div>
 
         {/* Stats bar */}
