@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import WatchmanLaunch from './pages/WatchmanLaunch'
 import WatchmanOperations from './pages/WatchmanOperations'
+import WatchmanFinance from './pages/WatchmanFinance'
 import { createClient } from '@supabase/supabase-js'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
@@ -162,7 +163,7 @@ function Hero() {
 
         {/* Subhead */}
         <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 580, margin: '0 auto 36px', fontWeight: 400 }}>
-          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, operations, and compliance in one unified system.
+          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, operations, and finance in one unified system.
         </p>
 
         {/* CTAs */}
@@ -246,6 +247,14 @@ const PRODUCTS = [
     features: ['Guard scheduling and deployment', 'Post orders and site management', 'Incident reporting and escalation', 'Client portal and reporting', 'Mobile-ready for field use', 'Multi-site and multi-client'],
     cta: 'Learn More', href: '/operations', external: false, highlight: true,
   },
+  {
+    badge: 'New', badgeColor: '#22c55e',
+    name: 'Watchman Finance',
+    tagline: 'Financial Operations Platform',
+    desc: 'Finance workflows built for security organizations. Track invoicing, payments, payroll readiness, and financial reporting with accountability tied to operations.',
+    features: ['Invoice and billing workflows', 'Payment tracking and reconciliation', 'Payroll readiness and labor cost visibility', 'Client account and contract tracking', 'Financial dashboards and exports', 'Connected to Watchman operations data'],
+    cta: 'Learn More', href: '/finance', external: false, highlight: false,
+  },
 ]
 
 function Products() {
@@ -255,10 +264,10 @@ function Products() {
         <div style={{ marginBottom: 48 }}>
           <SectionLabel>Products</SectionLabel>
           <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em' }}>
-            Two platforms, one mission
+            Three platforms, one mission
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(400px,1fr))', gap: 18 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: 18 }}>
           {PRODUCTS.map(p => (
             <Card key={p.name} highlight={p.highlight} style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 999, background: `${p.badgeColor}15`, color: p.badgeColor, border: `1px solid ${p.badgeColor}30`, display: 'inline-block', marginBottom: 20 }}>
@@ -335,9 +344,15 @@ const PLANS = [
     cta: 'Request Early Access', href: '#demo', highlight: true,
   },
   {
+    name: 'Finance', price: 'Coming Soon',
+    desc: 'Watchman Finance for billing workflows, reconciliation, payroll readiness, and financial visibility.',
+    features: ['Client invoicing workflows', 'Payment tracking and reconciliation', 'Payroll readiness support', 'Labor and service cost visibility', 'Financial exports and reporting', 'Role-based finance controls'],
+    cta: 'Request Early Access', href: '#demo', highlight: false,
+  },
+  {
     name: 'Enterprise', price: 'Custom',
     desc: 'Full Watchman suite with custom integrations, dedicated support, and white-label options.',
-    features: ['Everything in both plans', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee', 'On-site training'],
+    features: ['Everything in Launch, Operations, and Finance', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee', 'On-site training'],
     cta: 'Talk to Sales', href: '#demo', highlight: false,
   },
 ]
@@ -435,7 +450,7 @@ function About() {
 
 // ── Demo Form ─────────────────────────────────────────────────────────────────
 function DemoForm() {
-  const [form, setForm] = useState({ first_name: '', last_name: '', email: '', phone: '', organization: '', role: '', product_interest: 'both', message: '' })
+  const [form, setForm] = useState({ first_name: '', last_name: '', email: '', phone: '', organization: '', role: '', product_interest: 'all', message: '' })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
@@ -498,9 +513,10 @@ function DemoForm() {
                 <div>
                   <label style={labelBase}>Product Interest</label>
                   <select style={inputBase} value={form.product_interest} onChange={set('product_interest')}>
-                    <option value="both">Both products</option>
+                    <option value="all">All products</option>
                     <option value="launch">Watchman Launch</option>
                     <option value="operations">Watchman Operations</option>
+                    <option value="finance">Watchman Finance</option>
                   </select>
                 </div>
               </div>
@@ -589,6 +605,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/launch" element={<WatchmanLaunch />} />
       <Route path="/operations" element={<WatchmanOperations />} />
+      <Route path="/finance" element={<WatchmanFinance />} />
     </Routes>
   )
 }
