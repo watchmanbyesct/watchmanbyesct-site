@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "20 * * * *"
 
+permissions:
+  contents: write
+
 jobs:
   publish-dashboard:
     runs-on: ubuntu-latest
