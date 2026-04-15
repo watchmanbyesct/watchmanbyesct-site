@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watchman Integration Health Dashboard</title>
+  <style>
+    body { font-family: Inter, Arial, sans-serif; margin: 24px; color: #0f172a; background: #f8fafc; }
+    h1, h2 { margin: 0 0 12px; }
+    .meta { margin-bottom: 16px; color: #475569; font-size: 14px; }
+    .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; color: white; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(120px, 180px)); gap: 12px; margin: 16px 0 24px; }
+    .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; background: #fff; }
+    .label { color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .value { font-size: 24px; font-weight: 700; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { border: 1px solid #e2e8f0; padding: 8px; font-size: 13px; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; }
+    a { color: #0f766e; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Watchman Integration Health Dashboard</h1>
+  <div class="meta">Generated: 2026-04-15T20:29:13.533Z</div>
+  <div class="meta">Overall: <span class="pill" style="background:#10b981">connected</span></div>
+  <div class="meta"><a href="./integration-kpi-report.json">View raw JSON</a></div>
+  <div class="grid">
+    <div class="card"><div class="label">Connected</div><div class="value">5</div></div>
+    <div class="card"><div class="label">Degraded</div><div class="value">0</div></div>
+    <div class="card"><div class="label">Error</div><div class="value">0</div></div>
+    <div class="card"><div class="label">Healthy Latency Target (ms)</div><div class="value">1500</div></div>
+  </div>
+  <h2>Probe Results</h2>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>URL</th><th>State</th><th>Status</th><th>Latency (ms)</th><th>Detail</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>operations_frontend</td>
+        <td><code>https://watchmanbyesct.online</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>363</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>launch_frontend</td>
+        <td><code>https://www.esctroc.com</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>290</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_health</td>
+        <td><code>https://watchman-finance.vercel.app/api/health</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>1053</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_invoice_ingest_protected</td>
+        <td><code>https://watchman-finance.vercel.app/api/integrations/operations/invoices</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>401</td>
+        <td>823</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_approved_time_ingest_protected</td>
+        <td><code>https://watchman-finance.vercel.app/api/integrations/operations/approved-time</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>401</td>
+        <td>226</td>
+        <td>ok</td>
+      </tr>
+      </tbody>
+  </table>
+</body>
+</html>

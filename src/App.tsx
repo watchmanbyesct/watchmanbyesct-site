@@ -80,6 +80,7 @@ function Nav() {
     { label: 'Products', href: '#products' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'About', href: '#about' },
+    { label: 'Health', href: '/integration-health/index.html' },
   ]
 
   return (

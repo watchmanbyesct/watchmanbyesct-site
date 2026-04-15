@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dashboard:integration-health": "node ./scripts/generate-integration-health-dashboard.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

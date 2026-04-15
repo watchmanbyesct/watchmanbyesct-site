@@ -1,0 +1,51 @@
+name: Publish Integration Health Dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 * * * *"
+
+jobs:
+  publish-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate integration health dashboard
+        env:
+          WATCHMAN_OPERATIONS_BASE_URL: ${{ vars.WATCHMAN_OPERATIONS_BASE_URL }}
+          WATCHMAN_LAUNCH_BASE_URL: ${{ vars.WATCHMAN_LAUNCH_BASE_URL }}
+          WATCHMAN_FINANCE_BASE_URL: ${{ vars.WATCHMAN_FINANCE_BASE_URL }}
+          WATCHMAN_KPI_TIMEOUT_MS: "10000"
+          WATCHMAN_KPI_HEALTHY_LATENCY_MS: "1500"
+        run: npm run dashboard:integration-health
+
+      - name: Commit dashboard updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh integration health dashboard snapshot"
+          file_pattern: public/integration-health/*
+
+      - name: Notify alert webhook on failure
+        if: ${{ failure() }}
+        env:
+          WATCHMAN_ALERT_WEBHOOK: ${{ secrets.WATCHMAN_ALERT_WEBHOOK }}
+        run: |
+          if [ -z "$WATCHMAN_ALERT_WEBHOOK" ]; then
+            echo "WATCHMAN_ALERT_WEBHOOK is not configured; skipping alert."
+            exit 0
+          fi
+          curl -sS -X POST "$WATCHMAN_ALERT_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\":\"[Site] Integration health dashboard publish failed in ${GITHUB_REPOSITORY} on ${GITHUB_REF_NAME}. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\"}"
