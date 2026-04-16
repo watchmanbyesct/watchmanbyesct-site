@@ -121,6 +121,9 @@ export default function WatchmanOperations() {
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
             <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>Request Early Access <ArrowRight size={16} /></a>
+            <Link to="/field-app" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.85)', border: `1px solid rgba(212,168,67,0.35)`, background: 'rgba(212,168,67,0.06)', textDecoration: 'none' }}>
+              <Smartphone size={16} /> Field app & QR
+            </Link>
             <a href="/Watchman_Operations_Spec_Sheet.pdf" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>Download Spec Sheet</a>
           </div>
         </div>

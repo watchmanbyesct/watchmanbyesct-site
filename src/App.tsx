@@ -3,6 +3,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import WatchmanLaunch from './pages/WatchmanLaunch'
 import WatchmanOperations from './pages/WatchmanOperations'
 import WatchmanFinance from './pages/WatchmanFinance'
+import FieldAppDownload from './pages/FieldAppDownload'
 import { createClient } from '@supabase/supabase-js'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
@@ -80,6 +81,7 @@ function Nav() {
     { label: 'Products', href: '#products' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'About', href: '#about' },
+    { label: 'Field app', href: '/field-app' },
     { label: 'Health', href: '/integration-health/index.html' },
   ]
 
@@ -544,7 +546,8 @@ function Footer() {
       <div style={{ ...maxW, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
         <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 32, width: 'auto' }} />
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>Rochester · Kingston · Manhattan</div>
-        <div style={{ display: 'flex', gap: 16, fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
+          <a href="/field-app" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Field app</a>
           <a href="https://esctroc.com" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>esctroc.com</a>
           <a href="https://esctroc.com/privacy" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Privacy</a>
           <a href="https://esctroc.com/terms" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Terms</a>
@@ -607,6 +610,7 @@ export default function App() {
       <Route path="/launch" element={<WatchmanLaunch />} />
       <Route path="/operations" element={<WatchmanOperations />} />
       <Route path="/finance" element={<WatchmanFinance />} />
+      <Route path="/field-app" element={<FieldAppDownload />} />
     </Routes>
   )
 }
