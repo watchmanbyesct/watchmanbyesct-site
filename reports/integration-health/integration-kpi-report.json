@@ -1,56 +1,10 @@
 {
-  "generated_at": "2026-04-17T20:48:51.185Z",
+  "generated_at": "2026-04-17T23:26:33.069Z",
   "overall": "connected",
   "max_healthy_latency_ms": 1500,
-  "probes": [
-    {
-      "name": "operations_frontend",
-      "url": "https://watchmanbyesct.online",
-      "ok": true,
-      "status": 200,
-      "latency_ms": 407,
-      "state": "connected",
-      "detail": "ok"
-    },
-    {
-      "name": "launch_frontend",
-      "url": "https://www.esctroc.com",
-      "ok": true,
-      "status": 200,
-      "latency_ms": 216,
-      "state": "connected",
-      "detail": "ok"
-    },
-    {
-      "name": "finance_health",
-      "url": "https://watchman-finance.vercel.app/api/health",
-      "ok": true,
-      "status": 200,
-      "latency_ms": 1119,
-      "state": "connected",
-      "detail": "ok"
-    },
-    {
-      "name": "finance_invoice_ingest_protected",
-      "url": "https://watchman-finance.vercel.app/api/integrations/operations/invoices",
-      "ok": true,
-      "status": 401,
-      "latency_ms": 879,
-      "state": "connected",
-      "detail": "ok"
-    },
-    {
-      "name": "finance_approved_time_ingest_protected",
-      "url": "https://watchman-finance.vercel.app/api/integrations/operations/approved-time",
-      "ok": true,
-      "status": 401,
-      "latency_ms": 157,
-      "state": "connected",
-      "detail": "ok"
-    }
-  ],
+  "probes": [],
   "counts": {
-    "connected": 5,
+    "connected": 0,
     "degraded": 0,
     "error": 0
   }
