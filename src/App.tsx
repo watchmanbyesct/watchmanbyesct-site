@@ -87,7 +87,6 @@ function Nav() {
     { label: 'About', href: '#about' },
     { label: 'Help', href: '/help' },
     { label: 'Field app', href: '/field-app' },
-    { label: 'Health', href: '/integration-health/index.html' },
   ]
 
   return (

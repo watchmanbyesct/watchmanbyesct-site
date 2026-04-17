@@ -22,11 +22,11 @@
 </head>
 <body>
   <h1>Watchman Integration Health Dashboard</h1>
-  <div class="meta">Generated: 2026-04-17T20:31:53.770Z</div>
+  <div class="meta">Generated: 2026-04-17T20:48:51.185Z</div>
   <div class="meta">Overall: <span class="pill" style="background:#10b981">connected</span></div>
   <div class="meta"><a href="./integration-kpi-report.json">View raw JSON</a></div>
   <div class="grid">
-    <div class="card"><div class="label">Connected</div><div class="value">0</div></div>
+    <div class="card"><div class="label">Connected</div><div class="value">5</div></div>
     <div class="card"><div class="label">Degraded</div><div class="value">0</div></div>
     <div class="card"><div class="label">Error</div><div class="value">0</div></div>
     <div class="card"><div class="label">Healthy Latency Target (ms)</div><div class="value">1500</div></div>
@@ -36,7 +36,52 @@
     <thead>
       <tr><th>Name</th><th>URL</th><th>State</th><th>Status</th><th>Latency (ms)</th><th>Detail</th></tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <tr>
+        <td>operations_frontend</td>
+        <td><code>https://watchmanbyesct.online</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>407</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>launch_frontend</td>
+        <td><code>https://www.esctroc.com</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>216</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_health</td>
+        <td><code>https://watchman-finance.vercel.app/api/health</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>200</td>
+        <td>1119</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_invoice_ingest_protected</td>
+        <td><code>https://watchman-finance.vercel.app/api/integrations/operations/invoices</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>401</td>
+        <td>879</td>
+        <td>ok</td>
+      </tr>
+      
+      <tr>
+        <td>finance_approved_time_ingest_protected</td>
+        <td><code>https://watchman-finance.vercel.app/api/integrations/operations/approved-time</code></td>
+        <td><span style="color:#10b981;font-weight:700">connected</span></td>
+        <td>401</td>
+        <td>157</td>
+        <td>ok</td>
+      </tr>
+      </tbody>
   </table>
 </body>
 </html>

@@ -163,7 +163,8 @@ async function main() {
     counts: summary.counts,
   };
 
-  const outDir = resolve(process.cwd(), "public", "integration-health");
+  // Not under public/: this repo is deployed as a static site; public/ is world-readable.
+  const outDir = resolve(process.cwd(), "reports", "integration-health");
   mkdirSync(outDir, { recursive: true });
   const outJson = resolve(outDir, "integration-kpi-report.json");
   const outHtml = resolve(outDir, "index.html");

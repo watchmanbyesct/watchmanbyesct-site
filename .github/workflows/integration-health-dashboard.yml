@@ -38,7 +38,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh integration health dashboard snapshot"
-          file_pattern: public/integration-health/*
+          file_pattern: reports/integration-health/*
 
       - name: Notify alert webhook on failure
         if: ${{ failure() }}
