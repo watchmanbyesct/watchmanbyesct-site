@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import WatchmanLaunch from './pages/WatchmanLaunch'
 import WatchmanOperations from './pages/WatchmanOperations'
 import WatchmanFinance from './pages/WatchmanFinance'
 import FieldAppDownload from './pages/FieldAppDownload'
-import HelpHome from './pages/help/HelpHome'
-import HelpProductIndex from './pages/help/HelpProductIndex'
-import HelpArticle from './pages/help/HelpArticle'
+
+const HelpHome = lazy(() => import('./pages/help/HelpHome'))
+const HelpProductIndex = lazy(() => import('./pages/help/HelpProductIndex'))
+const HelpArticle = lazy(() => import('./pages/help/HelpArticle'))
 import { createClient } from '@supabase/supabase-js'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
@@ -608,18 +609,31 @@ function Home() {
 }
 
 // ── App ───────────────────────────────────────────────────────────────────────
+function HelpRouteFallback() {
+  return (
+    <div style={{
+      minHeight: '100vh', background: '#060606', display: 'flex',
+      alignItems: 'center', justifyContent: 'center', fontFamily: 'Inter, system-ui, sans-serif',
+    }}>
+      <span style={{ color: GOLD, fontSize: 14, fontWeight: 500 }}>Loading…</span>
+    </div>
+  )
+}
+
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/launch" element={<WatchmanLaunch />} />
-      <Route path="/operations" element={<WatchmanOperations />} />
-      <Route path="/finance" element={<WatchmanFinance />} />
-      <Route path="/field-app" element={<FieldAppDownload />} />
-      <Route path="/help" element={<HelpHome />} />
-      <Route path="/help/:product" element={<HelpProductIndex />} />
-      <Route path="/help/:product/:slug" element={<HelpArticle />} />
-    </Routes>
+    <Suspense fallback={<HelpRouteFallback />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/launch" element={<WatchmanLaunch />} />
+        <Route path="/operations" element={<WatchmanOperations />} />
+        <Route path="/finance" element={<WatchmanFinance />} />
+        <Route path="/field-app" element={<FieldAppDownload />} />
+        <Route path="/help" element={<HelpHome />} />
+        <Route path="/help/:product" element={<HelpProductIndex />} />
+        <Route path="/help/:product/:slug" element={<HelpArticle />} />
+      </Routes>
+    </Suspense>
   )
 }
 

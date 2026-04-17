@@ -1,6 +1,38 @@
-import matter from 'gray-matter'
-
 export type HelpProductId = 'launch' | 'operations' | 'finance'
+
+/** Minimal frontmatter parser (no eval); our help files use simple key: value YAML. */
+function parseSimpleFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
+  const text = raw.replace(/^\uFEFF/, '')
+  if (!text.startsWith('---\n')) {
+    return { data: {}, content: text }
+  }
+  const end = text.indexOf('\n---\n', 4)
+  if (end === -1) {
+    return { data: {}, content: text }
+  }
+  const block = text.slice(4, end)
+  const content = text.slice(end + 5)
+  const data: Record<string, unknown> = {}
+  for (const line of block.split('\n')) {
+    const idx = line.indexOf(':')
+    if (idx <= 0) continue
+    const key = line.slice(0, idx).trim()
+    let val = line.slice(idx + 1).trim()
+    if (!key) continue
+    if (val.startsWith('"') && val.endsWith('"')) {
+      try {
+        data[key] = JSON.parse(val) as string
+      } catch {
+        data[key] = val.slice(1, -1)
+      }
+    } else if (/^-?\d+$/.test(val)) {
+      data[key] = parseInt(val, 10)
+    } else {
+      data[key] = val
+    }
+  }
+  return { data, content }
+}
 
 export const HELP_PRODUCTS: { id: HelpProductId; label: string; description: string }[] = [
   {
@@ -48,7 +80,7 @@ function buildRegistry(): HelpArticleMeta[] {
   for (const [path, raw] of Object.entries(rawModules)) {
     const parsed = parseKey(path)
     if (!parsed || raw == null) continue
-    const { data, content } = matter(raw)
+    const { data, content } = parseSimpleFrontmatter(raw)
     const title = typeof data.title === 'string' ? data.title : parsed.slug
     const description = typeof data.description === 'string' ? data.description : ''
     const order = typeof data.order === 'number' ? data.order : 999
