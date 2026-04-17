@@ -4,6 +4,9 @@ import WatchmanLaunch from './pages/WatchmanLaunch'
 import WatchmanOperations from './pages/WatchmanOperations'
 import WatchmanFinance from './pages/WatchmanFinance'
 import FieldAppDownload from './pages/FieldAppDownload'
+import HelpHome from './pages/help/HelpHome'
+import HelpProductIndex from './pages/help/HelpProductIndex'
+import HelpArticle from './pages/help/HelpArticle'
 import { createClient } from '@supabase/supabase-js'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
@@ -81,6 +84,7 @@ function Nav() {
     { label: 'Products', href: '#products' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'About', href: '#about' },
+    { label: 'Help', href: '/help' },
     { label: 'Field app', href: '/field-app' },
     { label: 'Health', href: '/integration-health/index.html' },
   ]
@@ -547,6 +551,7 @@ function Footer() {
         <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 32, width: 'auto' }} />
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>Rochester · Kingston · Manhattan</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
+          <Link to="/help" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Help center</Link>
           <a href="/field-app" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Field app</a>
           <a href="https://esctroc.com" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>esctroc.com</a>
           <a href="https://esctroc.com/privacy" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Privacy</a>
@@ -611,6 +616,9 @@ export default function App() {
       <Route path="/operations" element={<WatchmanOperations />} />
       <Route path="/finance" element={<WatchmanFinance />} />
       <Route path="/field-app" element={<FieldAppDownload />} />
+      <Route path="/help" element={<HelpHome />} />
+      <Route path="/help/:product" element={<HelpProductIndex />} />
+      <Route path="/help/:product/:slug" element={<HelpArticle />} />
     </Routes>
   )
 }

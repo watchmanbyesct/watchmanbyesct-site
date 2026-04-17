@@ -178,6 +178,9 @@ export default function WatchmanLaunch() {
             <a href="/Watchman_Launch_Spec_Sheet.pdf" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>
               Download Spec Sheet
             </a>
+            <Link to="/help/launch" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(212,168,67,0.35)', background: 'rgba(212,168,67,0.06)', textDecoration: 'none' }}>
+              Help articles
+            </Link>
           </div>
         </div>
       </section>

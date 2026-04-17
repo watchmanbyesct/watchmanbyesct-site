@@ -133,6 +133,9 @@ export default function WatchmanFinance() {
             <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
               Request a Demo <ArrowRight size={16} />
             </a>
+            <Link to="/help/finance" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(212,168,67,0.35)', background: 'rgba(212,168,67,0.06)', textDecoration: 'none' }}>
+              Help articles
+            </Link>
           </div>
         </div>
       </section>
