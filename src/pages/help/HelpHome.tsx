@@ -50,7 +50,8 @@ export default function HelpHome() {
               Watchman Help Center
             </h1>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>
-              Guides for the three Watchman products: training and enrollment (Launch), field and command-center operations (Operations), and financial workflows (Finance). Choose a product below.
+              Step-by-step <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>how-to</strong> articles and deeper{' '}
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch (training and enrollment), Operations (field and command center), and Finance (billing, payroll, and ledger workflows). Open a product to browse both sections.
             </p>
           </div>
 

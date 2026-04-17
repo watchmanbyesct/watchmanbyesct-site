@@ -52,12 +52,16 @@ export const HELP_PRODUCTS: { id: HelpProductId; label: string; description: str
   },
 ]
 
+export type HelpArticleKind = 'how-to' | 'guide'
+
 export interface HelpArticleMeta {
   product: HelpProductId
   slug: string
   title: string
   description: string
   order: number
+  /** `how-to` = step-by-step task articles; `guide` = overview/reference (default). */
+  kind: HelpArticleKind
   tags?: string[]
   updated?: string
   body: string
@@ -86,12 +90,16 @@ function buildRegistry(): HelpArticleMeta[] {
     const order = typeof data.order === 'number' ? data.order : 999
     const tags = Array.isArray(data.tags) ? data.tags.map(String) : undefined
     const updated = typeof data.updated === 'string' ? data.updated : undefined
+    const kindRaw = data.kind
+    const kind: HelpArticleKind =
+      kindRaw === 'how-to' ? 'how-to' : 'guide'
     out.push({
       product: parsed.product,
       slug: parsed.slug,
       title,
       description,
       order,
+      kind,
       tags,
       updated,
       body: content.trim(),

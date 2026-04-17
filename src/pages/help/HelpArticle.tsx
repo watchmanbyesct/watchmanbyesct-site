@@ -2,7 +2,9 @@ import React from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
 import { HelpFooterChrome, HelpNav, HELP_GOLD, helpMaxW } from './HelpLayout'
+import { extractMarkdownToc } from '../../lib/markdownToc'
 import { getHelpArticle, HELP_PRODUCTS, isHelpProductId } from '../../lib/helpRegistry'
 
 export default function HelpArticle() {
@@ -27,6 +29,8 @@ export default function HelpArticle() {
     return <Navigate to={`/help/${product}`} replace />
   }
 
+  const toc = React.useMemo(() => extractMarkdownToc(article.body), [article.body])
+
   return (
     <div style={{ background: '#060606', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <style>{`
@@ -45,15 +49,33 @@ export default function HelpArticle() {
               {productMeta?.label ?? product}
             </Link>
           </div>
+          {article.kind === 'how-to' && (
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: HELP_GOLD, marginBottom: 10 }}>
+              How-to
+            </p>
+          )}
           <h1 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.85rem)', fontWeight: 700, color: '#fff', marginBottom: 12, letterSpacing: '-0.02em' }}>
             {article.title}
           </h1>
           {article.updated && (
-            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginBottom: 28 }}>Updated {article.updated}</p>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', marginBottom: toc.length ? 16 : 28 }}>Updated {article.updated}</p>
+          )}
+          {toc.length > 0 && (
+            <nav className="help-toc" aria-label="Table of contents">
+              <p className="help-toc-title">On this page</p>
+              <ul className="help-toc-list">
+                {toc.map((item) => (
+                  <li key={item.id} data-depth={item.depth}>
+                    <a href={`#${item.id}`}>{item.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           )}
           <div className="help-md-inner">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeSlug]}
               components={{
                 a: ({ href, children, className }) => {
                   if (href?.startsWith('/')) {
