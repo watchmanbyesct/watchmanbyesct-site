@@ -27,7 +27,3 @@ Launch provides **role-based portals** (student, instructor, member, and interna
 - Confirm you are on the **correct organization URL** (not a generic marketing page).
 - Reset password once, then wait a few minutes before trying again.
 - Ask the academy admin to confirm your **account exists** and the **role** is correct.
-
-### For operators
-
-Session and route guards are driven by **AuthContext** and role checks in the Launch app; mis-assigned roles are fixed in admin user management.

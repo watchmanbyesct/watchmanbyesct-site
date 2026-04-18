@@ -25,8 +25,4 @@ Checkout uses **Stripe** behind the scenes. You pay on a secure page hosted for 
 
 - Retry with the same card after confirming your bank did not block the charge.
 - Use a different card if your provider allows it.
-- Contact the academy if the site shows **paid** but you did not receive email—staff can reconcile in admin tools.
-
-### For operators
-
-Payment intent and verification run through **edge functions**; failed verification leaves enrollment in an unpaid state until resolved.
+- Contact the academy if the site shows **paid** but you did not receive email—the office can correct your enrollment status on their side.

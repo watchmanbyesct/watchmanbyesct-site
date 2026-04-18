@@ -30,7 +30,3 @@ Queue aging, unassigned work, and response-time style KPIs for dispatch triage.
 ### Intelligence summary
 
 Rollups for response time, site/guard context, lone worker, and patrol miss counters.
-
-### For operators
-
-These features are backed by dedicated API routes consumed by supervisor UIs (dispatch, intelligence, post orders, handover).

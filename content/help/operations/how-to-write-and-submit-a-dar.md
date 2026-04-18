@@ -10,7 +10,7 @@ A **DAR** is the narrative record of your shift: rounds, incidents, visitors, eq
 
 ### Before you start
 
-- Confirm **which DAR template** your site uses (some tenants use structured sections).
+- Confirm **which DAR template** your site uses (some organizations use structured sections).
 - Gather **times**, **names** (if policy allows), and **incident numbers** if you reference formal incidents.
 
 ### Steps
@@ -27,7 +27,3 @@ A **DAR** is the narrative record of your shift: rounds, incidents, visitors, eq
 
 - Reference **post order** requirements you executed (e.g. hourly rounds).
 - Link to a separate **incident report** when an event meets incident criteria instead of burying it only in narrative.
-
-### For operators
-
-Supervisor **report center** and **publication** settings control whether DAR content appears in client-facing packages.

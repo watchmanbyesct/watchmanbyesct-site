@@ -1,16 +1,16 @@
 ---
 title: "Payroll"
-description: "Runs, periods, profiles, and desktop payroll tooling."
+description: "Pay runs, pay periods, employee profiles, and approvals."
 order: 460
 updated: "2026-04-17"
 ---
 
-**Payroll** includes runs, periods, profiles/groups, approvals/reversals, and specialized desktop tooling.
+**Payroll** in Watchman Finance supports pay **runs**, **periods**, employee **profiles** and groups, **approvals**, and corrections when something was entered wrong.
 
-### Dependencies
+### Getting good results
 
-Approved time and integration feeds from Operations materially affect payroll outcomes.
+Paychecks are only as accurate as the **hours and earnings** information your team approved beforehand. Supervisors should finalize time in **Operations** (or your agreed process) before payroll cuts off for the period.
 
-### For operators
+### If numbers look wrong
 
-Form-heavy pages exist across payroll sections; high-volume work is easiest on desktop.
+Start by confirming the **pay period dates** and the employee’s **profile** (rate, department, tax settings). Then work with the person who approves time to see whether hours were changed after payroll started.

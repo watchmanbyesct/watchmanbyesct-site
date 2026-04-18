@@ -10,7 +10,3 @@ The **careers** funnel publishes openings and collects **structured applications
 ### Downstream
 
 Applications feed recruiting dashboards, background checks, and offers where your process includes those steps.
-
-### For operators
-
-Public pages are responsive; recruiting admin consoles are dense and desktop-first.

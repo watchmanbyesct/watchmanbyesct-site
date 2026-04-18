@@ -10,7 +10,3 @@ updated: "2026-04-17"
 ### Planning
 
 Supports cash-out planning and period-close readiness.
-
-### For operators
-
-Routes include bills, payments, and recurring schedules with responsive but desktop-oriented layouts.

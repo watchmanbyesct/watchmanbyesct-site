@@ -1,16 +1,22 @@
 ---
-title: "Report center and publication governance"
-description: "Canonical reports, runs, and client-safe visibility."
+title: "Reports and what clients can see"
+description: "Consistent reporting and sharing with customers when your contract allows."
 order: 90
 updated: "2026-04-17"
 ---
 
-The **formal report layer** defines report definitions, runs, and publication workflow so analytics are consistent and permissioned.
+Watchman helps your team produce **standard reports**—such as activity summaries and service metrics—and decide **who may view them** inside your company and in the **client portal**.
 
 ### Why it matters
 
-Published outputs feed supervisor reporting and the **client portal** where contracts allow. Permissions follow your tenant and role model.
+Clients expect accurate, consistent information. A controlled publication process reduces the risk of sharing drafts or the wrong version.
 
-### For operators
+### Typical roles
 
-The model includes definitions, materialized or reusable views, grants, and governance UI. Quality of charts depends on data freshness and scheduled refresh where applicable.
+- **Field staff** create or submit source records (for example daily activity).
+- **Supervisors** review and approve before wider distribution.
+- **Client contacts** only see what your organization has approved for them.
+
+### If you are a client user
+
+Log in to the **client portal** your security provider invited you to. If a report or metric is missing, ask your provider whether it is included in your service agreement and whether it has been released to the portal yet.

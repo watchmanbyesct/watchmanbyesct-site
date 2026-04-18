@@ -1,16 +1,22 @@
 ---
-title: "Platform administration"
-description: "Cross-tenant governance for Finance."
+title: "Platform administration (for designated admins)"
+description: "High-level access for people who manage Watchman Finance for many groups."
 order: 550
 updated: "2026-04-17"
 ---
 
-**Platform admin** is separate from day-to-day finance operations: tenants, users, modules, releases, and health at the platform level.
+Some organizations have a **small admin team** that manages Watchman Finance across locations or subsidiaries: adding users, turning major areas on or off, and coordinating with Watchman support.
 
-### Practical effect
+### Who this is for
 
-Controls entitlement and rollout governance for finance tenants.
+If you are a **day-to-day bookkeeper or payroll clerk**, you usually will not use these screens. Your **controller**, **IT lead**, or **Watchman sponsor** might.
 
-### For operators
+### What admins typically handle
 
-Routes live under a distinct platform group with dedicated actions.
+- **User access** for new hires and role changes  
+- **Which products or modules** your company uses  
+- **Working with support** when something affects everyone at once  
+
+### Getting help
+
+Use your company’s internal ticketing process first, then **Watchman / ESCT support** for changes that require vendor assistance.

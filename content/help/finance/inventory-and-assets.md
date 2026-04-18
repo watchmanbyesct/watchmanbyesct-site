@@ -10,7 +10,3 @@ Track **inventory** categories, locations, items, movements, employee issues, an
 ### Purpose
 
 Supports cost control and operational accountability.
-
-### For operators
-
-Inventory routes cover stock, issues, assets, and item masters.

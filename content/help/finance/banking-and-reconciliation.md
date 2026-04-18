@@ -10,7 +10,4 @@ updated: "2026-04-17"
 ### Why it matters
 
 Reconciles cash movement against AR, AP, and payroll activity.
-
-### For operators
-
-Transaction-heavy tables use horizontal scroll on smaller screens.
+ontal scroll on smaller screens.

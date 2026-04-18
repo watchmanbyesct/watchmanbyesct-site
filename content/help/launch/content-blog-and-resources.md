@@ -1,16 +1,16 @@
 ---
 title: "Blog, resources, and learning library"
-description: "Publishing articles and educational assets."
+description: "Articles, downloads, and learning materials for your audience."
 order: 260
 updated: "2026-04-17"
 ---
 
-Launch includes **content** surfaces: blog-style posts, resources, and library assets managed in admin.
+Your organization can publish a **blog**, **resource library**, and other learning materials so visitors and students find helpful content in one place.
 
-### Purpose
+### For readers
 
-Supports SEO, brand authority, and training demand generation.
+Browse categories or search for topics your provider highlights. Downloadable files (PDFs, forms) usually open in a new tab or save to your device.
 
-### For operators
+### For staff who publish
 
-List and detail routes exist on the public site with responsive layouts; admin CRUD manages categories and posts.
+Updates are made from the **admin** area. Keep titles clear and dates accurate so students trust what they read.

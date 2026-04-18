@@ -15,10 +15,10 @@ Administrators use Launch’s **CMS** so public pages can be drafted, reviewed, 
 
 ### Steps
 
-1. Sign in to **Admin** and open **Website pages** (or the equivalent pages list for your tenant).
+1. Sign in to **Admin** and open **Website pages** (or the equivalent list for your organization).
 2. Open the page you want to change, or **create** a new page and save a draft first.
 3. Set **status** to **Published** when the content is final and should appear to the public.
-4. Set status to **Draft** or **Unpublished** (wording varies) to **hide** the page from visitors; most sites show **Coming soon** for unpublished routes.
+4. Set status to **Draft** or **Unpublished** (wording varies) to **hide** the page from visitors; many sites show **Coming soon** until you publish.
 5. **Save** changes. Use **preview** if your build offers it before publishing.
 6. In a **private browser window**, load the public URL and confirm visitors see the expected version.
 
@@ -26,7 +26,3 @@ Administrators use Launch’s **CMS** so public pages can be drafted, reviewed, 
 
 - Avoid publishing placeholder text; search engines and clients may cache the first live version.
 - Coordinate with training or legal if the page references **compliance** or **pricing**.
-
-### For operators
-
-Publication is enforced by **PageGate** against `website_pages.status` in the Launch SPA.

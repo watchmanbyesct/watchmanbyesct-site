@@ -5,12 +5,8 @@ order: 520
 updated: "2026-04-17"
 ---
 
-This area spans **reporting** definitions and KPIs, **planning** (budgets/forecasts/variance), **consolidation** including intercompany, and **commercial** controls such as feature flags and client portal settings.
+This area spans **reports and dashboards**, **planning** (budgets, forecasts, and variance), **consolidation** when you operate more than one legal entity, and settings that control **what client users** may see in their portal.
 
 ### Expectations
 
 Broad scope—desktop dashboards are the primary interaction pattern.
-
-### For operators
-
-Multiple modules and routes exist under reporting, planning, consolidation, and commercial sections.

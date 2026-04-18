@@ -1,16 +1,16 @@
 ---
-title: "Tenants and product entitlements"
-description: "Creating organizations and linking Launch, Operations, and Finance access."
+title: "Which Watchman products your organization can use"
+description: "Launch, Operations, and Finance—and how access is decided."
 order: 30
 updated: "2026-04-17"
 ---
 
-A **tenant** is your organization’s isolated workspace. Platform administrators can create tenants and set **product entitlements** for Watchman Launch, Operations, and Finance.
+Your company’s agreement with Watchman determines which **products** are available: **Launch** (training and public site), **Operations** (scheduling, field work, incidents, reports), and **Finance** (billing, payroll, accounting workflows).
 
-### Why it matters
+### What that means for you
 
-Entitlements control which products are available both contractually and in the product UI. Onboarding contact metadata can be stored with the tenant record.
+You only see sign-in options and menus for products your organization has been set up to use. If you expect access to a product you do not see, your **administrator** or **ESCT contact** can confirm what is included in your plan and update your account.
 
-### For operators
+### New organizations
 
-Provisioning flows through APIs such as `create_tenant` with product flags stored in tenant settings.
+When a new company comes on board, Watchman is configured for that company’s products and contacts so the right people receive onboarding information.

@@ -10,7 +10,3 @@ updated: "2026-04-17"
 ### Interactions
 
 Connects to payroll and workforce cost planning.
-
-### For operators
-
-Leave modules include types, policies, requests, and balances pages.

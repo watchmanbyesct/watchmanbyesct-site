@@ -27,7 +27,3 @@ Use the public training area of your organization’s Launch-powered site to enr
 
 - **Session full:** Pick another session or join a waitlist if offered.
 - **No confirmation email:** Check spam, then contact the academy using the contact link on the same site.
-
-### For operators
-
-Enrollment writes to your Launch training tables; admins manage sessions and capacity in the admin dashboard.

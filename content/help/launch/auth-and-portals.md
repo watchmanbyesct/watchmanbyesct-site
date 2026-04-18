@@ -10,7 +10,3 @@ After authentication, users land in **role-specific dashboards**: students, inst
 ### What it enables
 
 Progress tracking, attendance capture, account lifecycle actions, and protected admin tools.
-
-### For operators
-
-Session context and route guards enforce which dashboard routes are reachable. Implementation spans auth context and guard components.

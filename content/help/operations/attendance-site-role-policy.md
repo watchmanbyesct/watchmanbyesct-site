@@ -10,7 +10,3 @@ Watchman can enforce **role, site, and time** rules for attendance. Policy decis
 ### What you should know
 
 Outcomes surface through timekeeping and admin experiences rather than a single standalone “policy screen.” Supervisory overrides may apply where your process allows.
-
-### For operators
-
-Schema concepts include site guard assignments, shift **site_role**, and `clockin_policy_snapshot` on timekeeping. Validation SQL can be used in your environment to detect overlaps or window anomalies.

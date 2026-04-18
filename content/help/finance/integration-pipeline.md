@@ -1,16 +1,16 @@
 ---
-title: "Integration ingestion and pipelines"
-description: "Bringing Operations and Launch data into Finance."
+title: "Data flowing from Operations and Launch into Finance"
+description: "Why payroll and billing need good information from the field."
 order: 410
 updated: "2026-04-17"
 ---
 
-Finance ingests **approved time**, **invoices**, and related payloads from Operations and Launch through staging tables, run tracking, and delivery logs.
+Watchman Finance uses **approved hours**, **invoices**, and related information that originate in **Operations** and **Launch**. Your finance team monitors whether that information arrived and looks correct before running payroll or billing.
 
-### Why data quality matters
+### Why it matters for everyone
 
-Downstream payroll, billing, and reconciliation quality depends on clean upstream operational data.
+If time or jobs are missing or wrong in Operations, paychecks and client invoices in Finance will not match reality. Fixing problems early saves rework.
 
-### For operators
+### What finance users usually do
 
-API routes and module actions implement verification and idempotency patterns; monitoring pages show pipeline health.
+Open the **integration** or **pipeline** area to see the latest sync status. If something shows an error, note the date and message and work with your operations lead or Watchman support using that detail.

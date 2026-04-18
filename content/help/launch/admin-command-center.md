@@ -7,10 +7,6 @@ updated: "2026-04-17"
 
 The **admin** experience is a modular console for website content, services, training, careers, membership, workshops, users, payments, and system settings.
 
-### Tradeoff
+### Tip
 
-The surface area is large; desktop is the intended primary environment.
-
-### For operators
-
-Some workflows use secure edge functions while others may still be migrating—refer to your engineering backlog for client-side CRUD hardening.
+There are many menus. Most organizations use a **full-size screen** for admin work; phones work in a pinch but can feel crowded.

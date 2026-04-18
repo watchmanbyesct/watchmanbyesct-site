@@ -7,10 +7,6 @@ updated: "2026-04-17"
 
 Tax workflows cover **jurisdictions**, employer profiles, liabilities, filing periods, compliance tasks, and **direct deposit** batches.
 
-### Dependencies
+### How it connects
 
-Pulls from payroll and affects close and treasury reporting.
-
-### For operators
-
-Dedicated tax and direct-deposit routes exist with dashboard and form patterns.
+Tax and deposits rely on **payroll** being up to date. Changes here affect **month-end close** and cash planning reports your leadership reviews.

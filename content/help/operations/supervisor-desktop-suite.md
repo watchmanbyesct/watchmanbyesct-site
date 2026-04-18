@@ -9,8 +9,4 @@ The **supervisor desktop** is the primary control surface for running a security
 
 ### Display
 
-The layout is **desktop-first** with a grouped sidebar. On smaller widths the sidebar collapses into a drawer (around **1024px** and below).
-
-### For operators
-
-Some areas are **module-gated** (for example billing, communications, live map, automation, intelligence). Availability depends on tenant configuration.
+The layout is **desktop-first** with a grouped sidebar. On a **tablet or small laptop**, the menu usually tucks into a **drawer** you open from the edge of the screen.

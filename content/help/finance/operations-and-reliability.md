@@ -10,7 +10,3 @@ An **operations** hub covers health pages, test runs, release tasks, jobs, alert
 ### Purpose
 
 Increases production reliability for all finance domains.
-
-### For operators
-
-Synthetic probes may run on a schedule; treat alerts as operational signals.

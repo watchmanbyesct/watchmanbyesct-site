@@ -1,16 +1,16 @@
 ---
-title: "Catalog and billing engine"
-description: "Pricing, billing candidates, rules, and exceptions."
+title: "Service catalog and billing rules"
+description: "How work performed in the field becomes invoices your clients recognize."
 order: 500
 updated: "2026-04-17"
 ---
 
-The **catalog** and **billing** modules translate operational service records into billable, auditable outputs.
+Your **service catalog** describes what you sell (rates, sites, contract terms). The **billing** area turns completed work—shifts, visits, or other services—into **draft invoices** or billing lines your team can review before sending to clients.
 
-### Dependencies
+### Why accuracy matters
 
-Upstream integration quality directly affects billing exceptions and resolution time.
+If hours or jobs are missing in Operations, invoices will not match what actually happened. Finance and operations leads should agree on a simple routine to catch gaps each billing cycle.
 
-### For operators
+### For billing staff
 
-Separate modules include catalog entities, billing candidates, rules, and exception handling routes.
+Review **exceptions** or **hold** lists each week so small data issues do not pile up at month-end.

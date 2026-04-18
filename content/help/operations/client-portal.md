@@ -5,12 +5,8 @@ order: 100
 updated: "2026-04-17"
 ---
 
-The **client portal** gives customer stakeholders a dedicated experience for transparency: incidents, reports, communications, billing views, and service requests—subject to entitlements and publication.
+The **client portal** gives your customers a dedicated sign-in experience for transparency: incidents, reports, messages, billing summaries, and service requests—**only** what your company chooses to share.
 
 ### Expectations
 
-What clients see depends on **what your team publishes** and which modules are enabled. This is intentionally separate from the internal supervisor UI.
-
-### For operators
-
-Routes live under a dedicated client layout; data is shared with operations backends but isolated by role in the UI.
+What clients see depends on **what your team publishes** and what is included in your service agreement. Day-to-day guard and supervisor screens stay internal unless you release information to the portal.

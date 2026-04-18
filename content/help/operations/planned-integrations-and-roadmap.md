@@ -1,16 +1,16 @@
 ---
-title: "Planned integrations and advanced modules"
-description: "Roadmap areas such as accounting exports, VMS, and automation."
+title: "What may come next in Watchman Operations"
+description: "Optional capabilities and integrations that roll out over time."
 order: 130
 updated: "2026-04-17"
 ---
 
-Some capabilities are **planned** or **gated** by tenant: for example deeper accounting exports, workforce integrations, camera/VMS webhooks, advanced communications, and automation intelligence.
+Watchman Operations grows over time. Your organization might not have every optional feature turned on yet—examples include deeper **accounting links**, **camera or alarm integrations**, richer **messaging**, and more **automation**.
 
 ### What to expect
 
-Availability varies by module flags and implementation stage. Your account team can confirm what is enabled for your tenant.
+Features appear when your contract includes them and your team is ready to use them. Menus stay uncluttered until then.
 
-### For operators
+### Questions
 
-Module IDs and admin “what’s next” areas are tracked in platform administration.
+Your **Watchman account contact** or **ESCT representative** can tell you what is available today and what is on your roadmap.

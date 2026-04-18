@@ -1,16 +1,16 @@
 ---
-title: "Evidence and governance extensions"
-description: "Evidence packs, approvals, snapshots, and delivery logs."
+title: "Evidence and approvals"
+description: "Supporting documents, sign-offs, and audit-friendly records."
 order: 540
 updated: "2026-04-17"
 ---
 
-Workflow extensions support **evidence** documentation, approval requests, trial-balance snapshots, idempotency, and integration **delivery logs**.
+Finance teams can attach **supporting documents**, route **approval requests**, keep **snapshots** of key balances at a point in time, and track **delivery** of information between systems—so there is a clear trail when questions come up later.
 
 ### Why it matters
 
-Improves auditability and confidence in finance outcomes.
+Auditors, lenders, and owners often ask “show your work.” These tools help you demonstrate that sensitive changes were reviewed and that data handoffs completed.
 
-### For operators
+### For approvers
 
-Dedicated pages exist for evidence, approvals, and delivery visibility.
+When you receive an approval request, read the summary and attachments before you approve or send back for correction.

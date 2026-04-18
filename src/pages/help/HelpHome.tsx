@@ -51,7 +51,7 @@ export default function HelpHome() {
             </h1>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>
               Step-by-step <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>how-to</strong> articles and deeper{' '}
-              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch (training and enrollment), Operations (field and command center), and Finance (billing, payroll, and ledger workflows). Open a product to browse both sections.
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch (training and enrollment), Operations (field and command center), and Finance (billing, payroll, and ledger workflows). Everything here is written for <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>people using the products</strong>—not for IT or engineering runbooks. Open a product to browse both sections.
             </p>
           </div>
 

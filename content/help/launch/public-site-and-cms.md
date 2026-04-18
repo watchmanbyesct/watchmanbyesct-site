@@ -1,16 +1,16 @@
 ---
 title: "Public site and page publication"
-description: "Marketing pages, gated sections, and “Coming soon” for drafts."
+description: "Marketing pages, drafts, and what visitors see."
 order: 200
 updated: "2026-04-17"
 ---
 
-Watchman Launch powers the **public ESCT-facing site**: services, training, careers, resources, legal pages, and dynamic CMS pages.
+Watchman Launch runs your organization’s **public website**: services, training, careers, resources, legal pages, and other pages your team maintains.
 
 ### Draft vs live
 
-Unpublished pages can show a **Coming soon** experience to visitors while administrators continue editing.
+Pages that are still in **draft** or **unpublished** state often show visitors a **Coming soon** message instead of unfinished content. When you are ready, publish the page so the real content appears.
 
-### For operators
+### For editors
 
-Routing is a React SPA with lazy-loaded pages. Publication status is read from `website_pages.status` and enforced with a gate component.
+Save work often. Preview in a **private browser window** (or incognito) to see what the public sees, because signed-in admins sometimes see more than visitors do.

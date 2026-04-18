@@ -10,7 +10,3 @@ Watchman Operations supports a **progressive web app** posture so field users ca
 ### Practical benefit
 
 Improves reliability for timekeeping, incidents, and patrol workflows on mobile hardware.
-
-### For operators
-
-A web manifest and service worker are part of the deployment package; behavior aligns with mobile shell routes.

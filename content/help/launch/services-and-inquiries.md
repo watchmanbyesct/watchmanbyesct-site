@@ -5,12 +5,12 @@ order: 210
 updated: "2026-04-17"
 ---
 
-The **services** area presents offerings and captures **inquiries** and consultation requests.
+The **services** area presents what your company offers and lets visitors send **inquiries** or consultation requests through structured forms.
 
 ### What happens next
 
-Leads feed recruiting and onboarding workflows depending on your process.
+Your team receives the inquiry in Watchman so it can be assigned, followed up, and tracked—instead of getting lost in a personal inbox.
 
-### For operators
+### Tips for visitors
 
-Public pages are responsive; admin CRUD for services and inquiries is typically desktop-optimized. Email may be sent through edge functions.
+Use the form on the service page that best matches what you need. Include a good phone number or email so the business can reach you quickly.

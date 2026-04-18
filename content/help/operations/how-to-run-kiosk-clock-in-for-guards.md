@@ -11,11 +11,11 @@ updated: "2026-04-17"
 ### Before you start
 
 - Your supervisor must have issued you a **kiosk PIN** and explained the **device code** or URL for your site.
-- Know your **guard identifier** if the kiosk asks for it (format varies by tenant).
+- Know your **guard identifier** if the kiosk asks for it (format varies by site).
 
 ### Steps
 
-1. Wake the tablet and open the **kiosk URL** (often `/kiosk` or a QR code printed at the desk).
+1. Wake the tablet and open the **kiosk** screen (your site may use a shortcut, a bookmark, or a **QR code** posted at the desk).
 2. Enter the **device** or **site code** if the first screen asks for it (some tablets remember this).
 3. Enter your **guard ID** (or employee number) and **4-digit PIN**.
 4. Tap **Clock in** or **Clock out** as appropriate.
@@ -26,7 +26,3 @@ updated: "2026-04-17"
 
 - Never write your PIN on the tablet frame where others can read it.
 - If the tablet is **lost**, report it immediately—device keys can be revoked.
-
-### For operators
-
-Provisioning and lockout thresholds are covered in the product guide [Kiosk clock (shared tablet)](/help/operations/kiosk-clock-mode).

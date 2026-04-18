@@ -10,7 +10,3 @@ updated: "2026-04-17"
 ### Connection to Operations
 
 Operational invoicing inputs feed AR metrics like aging and cash.
-
-### For operators
-
-Dedicated routes exist for invoices, payments, collections, and related AR actions.

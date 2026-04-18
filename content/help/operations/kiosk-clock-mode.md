@@ -1,16 +1,23 @@
 ---
-title: "Kiosk clock (shared tablet)"
-description: "Clock in and out on a shared device with guard ID and PIN."
+title: "Kiosk clock (shared tablet at the site)"
+description: "Clock in and out on a shared tablet with your ID and PIN."
 order: 80
 updated: "2026-04-17"
 ---
 
-**Kiosk mode** lets officers clock in or out on a **locked shared tablet** using a guard identifier and **4-digit PIN**, without a full personal session login.
+**Kiosk mode** is for **shared tablets** at a building entrance or security desk. You clock in or out with your **guard ID** and a **short PIN**, without signing into the full personal app on that device.
 
-### Where it shows up
+### Who sets it up
 
-Supervisors provision kiosk devices and PINs from settings. Guards use a full-screen kiosk route (for example `/kiosk` or `/kiosk/:deviceCode`).
+A **supervisor** or site lead registers the tablet and sets or resets PINs from Watchman **Settings**, following your company’s procedures.
 
-### For operators
+### What you do as a guard
 
-Server-side actions authenticate the device and guard, then reuse standard `clock_in` / `clock_out` policy enforcement. Environment variables can tune PIN/device lock thresholds. Optional tenant settings can expire PINs or limit rotation frequency.
+1. Use the tablet your site provides—often unlocked only to the clock screen.
+2. Enter the **ID** and **PIN** your supervisor gave you.
+3. Tap **Clock in** or **Clock out** and wait for the success message before you walk away.
+4. If you forgot your PIN or the tablet is lost, tell a **supervisor** right away so they can reset access.
+
+### Why companies use it
+
+High-traffic entrances are easier when officers do not need to pull out personal phones. Your company still gets consistent time records tied to the right person and site.

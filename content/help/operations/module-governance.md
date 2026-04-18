@@ -1,16 +1,16 @@
 ---
-title: "Module governance (tenant features)"
-description: "Enable or disable Watchman modules per organization."
+title: "Turning features on or off for your company"
+description: "Why some menus appear for some people and not others."
 order: 20
 updated: "2026-04-17"
 ---
 
-Your tenant can turn **modules** on or off so teams only see what they use. Categories include operations, workforce, field, intelligence, management, platform, and integrations.
+Your organization can choose which **areas of Watchman** are active—for example scheduling, billing, patrol, or reports. People who manage Watchman for your company work with ESCT or your internal admin to match the product to what you actually use.
 
-### What it affects
+### What you notice day to day
 
-When a module is off, related routes and menus typically disappear for that tenant. Turning a module on restores access for roles that already have permission.
+When an area is turned off, related **menus and pages usually disappear** so teams are not distracted by tools you are not using yet. When an area is turned back on, people whose **roles** already allow that work will see it appear again.
 
-### For operators
+### If you need a feature you do not see
 
-Platform administrators manage modules from the admin experience; changes persist via API and refresh the session module context. Roughly **26** modules are registered with defaults per tenant.
+Ask your **supervisor** or **company administrator**. They can confirm whether the feature is included in your subscription and whether your account has the right role to use it.
