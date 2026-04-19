@@ -3,6 +3,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import WatchmanLaunch from './pages/WatchmanLaunch'
 import WatchmanOperations from './pages/WatchmanOperations'
 import WatchmanFinance from './pages/WatchmanFinance'
+import WatchmanHR from './pages/WatchmanHR'
 import FieldAppDownload from './pages/FieldAppDownload'
 
 const HelpHome = lazy(() => import('./pages/help/HelpHome'))
@@ -170,7 +171,7 @@ function Hero() {
 
         {/* Subhead */}
         <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 580, margin: '0 auto 36px', fontWeight: 400 }}>
-          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, operations, and finance in one unified system.
+          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, people operations, field operations, and finance in one unified system.
         </p>
 
         {/* CTAs */}
@@ -248,6 +249,14 @@ const PRODUCTS = [
   },
   {
     badge: 'In Development', badgeColor: GOLD,
+    name: 'Watchman HR',
+    tagline: 'People & Workforce Platform',
+    desc: 'Recruiting, onboarding, and workforce context built for security organizations—so hiring, credentials, and deployment stay connected instead of scattered across inboxes and spreadsheets.',
+    features: ['Applicant pipeline and careers publishing', 'References, checks, and offer workflows', 'Onboarding aligned to training and credentials', 'Role-based HR visibility and governance', 'Hiring analytics for leadership and HR', 'Designed to connect with Launch, Operations, and Finance'],
+    cta: 'Learn More', href: '/hr', external: false, highlight: false,
+  },
+  {
+    badge: 'In Development', badgeColor: GOLD,
     name: 'Watchman Operations',
     tagline: 'Security Operations Platform',
     desc: 'Real-time operations management for guard companies. Shift scheduling, post orders, incident tracking, and client reporting built for the field.',
@@ -270,9 +279,12 @@ function Products() {
       <div style={maxW}>
         <div style={{ marginBottom: 48 }}>
           <SectionLabel>Products</SectionLabel>
-          <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em' }}>
-            Three platforms, one mission
+          <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', marginBottom: 14 }}>
+            Four platforms, one mission
           </h2>
+          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, maxWidth: 640, lineHeight: 1.7 }}>
+            Each Watchman product is designed to stand on its own—yet they are built to work together, so training, people, operations, and finance reinforce the same standards from the first application to the final invoice.
+          </p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: 18 }}>
           {PRODUCTS.map(p => (
@@ -345,6 +357,12 @@ const PLANS = [
     cta: 'Get Started', href: '#demo', highlight: false,
   },
   {
+    name: 'HR', price: 'Coming Soon',
+    desc: 'Watchman HR for recruiting, onboarding, and workforce records tied to training and deployment.',
+    features: ['Careers and applicant pipeline', 'References and background workflows', 'Onboarding and credential readiness', 'Employee records with governed access', 'Hiring analytics', 'Connected to Launch and Operations'],
+    cta: 'Request Early Access', href: '#demo', highlight: false,
+  },
+  {
     name: 'Operations', price: 'Coming Soon',
     desc: 'Watchman Operations for security guard companies and multi-site deployments.',
     features: ['Guard scheduling', 'Post order management', 'Incident reporting', 'Client portal', 'Mobile field access', 'Multi-site support'],
@@ -359,7 +377,7 @@ const PLANS = [
   {
     name: 'Enterprise', price: 'Custom',
     desc: 'Full Watchman suite with custom integrations, dedicated support, and white-label options.',
-    features: ['Everything in Launch, Operations, and Finance', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee', 'On-site training'],
+    features: ['Everything in Launch, HR, Operations, and Finance', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee', 'On-site training'],
     cta: 'Talk to Sales', href: '#demo', highlight: false,
   },
 ]
@@ -523,6 +541,7 @@ function DemoForm() {
                     <option value="all">All products</option>
                     <option value="launch">Watchman Launch</option>
                     <option value="operations">Watchman Operations</option>
+                    <option value="hr">Watchman HR</option>
                     <option value="finance">Watchman Finance</option>
                   </select>
                 </div>
@@ -627,6 +646,7 @@ export default function App() {
         <Route path="/launch" element={<WatchmanLaunch />} />
         <Route path="/operations" element={<WatchmanOperations />} />
         <Route path="/finance" element={<WatchmanFinance />} />
+        <Route path="/hr" element={<WatchmanHR />} />
         <Route path="/field-app" element={<FieldAppDownload />} />
         <Route path="/help" element={<HelpHome />} />
         <Route path="/help/:product" element={<HelpProductIndex />} />
