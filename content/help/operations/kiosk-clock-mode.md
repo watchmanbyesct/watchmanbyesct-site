@@ -2,7 +2,7 @@
 title: "Kiosk clock (shared tablet at the site)"
 description: "Clock in and out on a shared tablet with your ID and PIN."
 order: 80
-updated: "2026-04-17"
+updated: "2026-04-30"
 ---
 
 **Kiosk mode** is for **shared tablets** at a building entrance or security desk. You clock in or out with your **guard ID** and a **short PIN**, without signing into the full personal app on that device.
@@ -17,6 +17,8 @@ A **supervisor** or site lead registers the tablet and sets or resets PINs from 
 2. Enter the **ID** and **PIN** your supervisor gave you.
 3. Tap **Clock in** or **Clock out** and wait for the success message before you walk away.
 4. If you forgot your PIN or the tablet is lost, tell a **supervisor** right away so they can reset access.
+
+For a pure step-by-step checklist, see [How to use kiosk clock-in (shared tablet)](/help/operations/how-to-run-kiosk-clock-in-for-guards).
 
 ### Why companies use it
 

@@ -3,7 +3,7 @@ title: "How to use kiosk clock-in (shared tablet)"
 description: "Clock in or out with guard ID and PIN when your site uses a kiosk device."
 order: 9
 kind: how-to
-updated: "2026-04-17"
+updated: "2026-04-30"
 ---
 
 **Kiosk mode** is for **shared tablets** at a site entrance. You do not use your full personal login on that device.
@@ -26,3 +26,5 @@ updated: "2026-04-17"
 
 - Never write your PIN on the tablet frame where others can read it.
 - If the tablet is **lost**, report it immediately—device keys can be revoked.
+
+For setup/background context, see [Kiosk clock (shared tablet at the site)](/help/operations/kiosk-clock-mode).
