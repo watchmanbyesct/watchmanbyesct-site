@@ -1,0 +1,6 @@
+{
+  "status": "ok",
+  "kind": "liveness",
+  "service": "watchman-site",
+  "hint": "Static asset for uptime monitors at /health.json"
+}
