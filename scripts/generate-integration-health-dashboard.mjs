@@ -9,7 +9,17 @@ const launchBase = (process.env.WATCHMAN_LAUNCH_BASE_URL ?? "https://www.esctroc
 const financeBase = (process.env.WATCHMAN_FINANCE_BASE_URL ?? "https://watchman-finance.vercel.app").trim();
 
 function nowIso() {
-  return new Date().toISOString();
+  return new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+    timeZoneName: "short",
+  });
 }
 
 function withTimeout(promiseFactory, ms) {
