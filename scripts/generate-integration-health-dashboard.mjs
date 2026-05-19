@@ -7,6 +7,8 @@ const maxHealthyLatencyMs = Number(process.env.WATCHMAN_KPI_HEALTHY_LATENCY_MS ?
 const operationsBase = (process.env.WATCHMAN_OPERATIONS_BASE_URL ?? "https://watchmanbyesct.online").trim();
 const launchBase = (process.env.WATCHMAN_LAUNCH_BASE_URL ?? "https://www.esctroc.com").trim();
 const financeBase = (process.env.WATCHMAN_FINANCE_BASE_URL ?? "https://watchman-finance.vercel.app").trim();
+const hrBase = (process.env.WATCHMAN_HR_BASE_URL ?? "").trim();
+const watchmanIdBase = (process.env.WATCHMAN_ID_BASE_URL ?? "").trim();
 
 function nowIso() {
   return new Date().toLocaleString("en-US", {
@@ -143,6 +145,15 @@ async function main() {
 
   if (operationsBase) probes.push(await probeHttp("operations_frontend", operationsBase));
   if (launchBase) probes.push(await probeHttp("launch_frontend", launchBase));
+
+  if (hrBase) {
+    probes.push(await probeHttp("hr_health", `${hrBase.replace(/\/$/, "")}/api/health`));
+  }
+
+  if (watchmanIdBase) {
+    const idRoot = watchmanIdBase.replace(/\/$/, "");
+    probes.push(await probeHttp("watchman_id_health", `${idRoot}/health`));
+  }
 
   if (finance) {
     probes.push(await probeHttp("finance_health", `${finance}/api/health`));

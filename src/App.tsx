@@ -9,17 +9,12 @@ import FieldAppDownload from './pages/FieldAppDownload'
 const HelpHome = lazy(() => import('./pages/help/HelpHome'))
 const HelpProductIndex = lazy(() => import('./pages/help/HelpProductIndex'))
 const HelpArticle = lazy(() => import('./pages/help/HelpArticle'))
-import { createClient } from '@supabase/supabase-js'
+import { isSupabaseConfigured, supabase } from './lib/supabase'
 import {
   Shield, BookOpen, Radio, FileText, Users, BarChart3,
   Bell, Check, ArrowRight, ChevronRight, Menu, X,
   ExternalLink, Building2, Church, Briefcase, MapPin
 } from 'lucide-react'
-
-const supabase = createClient(
-  'https://novqqqsyixugczzabfaz.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vdnFxcXN5aXh1Z2N6emFiZmF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI2NjMxMjgsImV4cCI6MjA1ODIzOTEyOH0.p9-VWqQVy1GXLE_b91Vf0OFTaGODGD_9rEoTmErpkJo'
-)
 
 const GOLD = '#d4a843'
 const maxW = { maxWidth: 1200, margin: '0 auto', padding: '0 24px' }
@@ -488,8 +483,16 @@ function DemoForm() {
     if (!form.first_name || !form.last_name || !form.email || !form.organization) {
       setError('Please fill in all required fields.'); return
     }
+    if (!isSupabaseConfigured()) {
+      setError('Demo requests are temporarily unavailable. Please email info@watchmanbyesct.com directly.')
+      return
+    }
     setLoading(true); setError('')
-    const { error: dbErr } = await supabase.from('demo_requests').insert({ ...form, source: 'watchmanbyesct.com', status: 'new' })
+    const { error: dbErr } = await supabase.from('demo_requests').insert({
+      ...form,
+      source: 'watchmanbyesct.com',
+      status: 'new',
+    })
     if (dbErr) { setError('Something went wrong. Please email info@watchmanbyesct.com directly.'); setLoading(false); return }
     setSuccess(true); setLoading(false)
   }
