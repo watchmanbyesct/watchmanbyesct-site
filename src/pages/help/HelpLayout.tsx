@@ -21,7 +21,7 @@ export function HelpNav({ title }: { title?: string }) {
     >
       <div style={{ ...helpMaxW, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: 12 }}>
-          <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 36, width: 'auto' }} />
+          <img src="/branding/watchman-by-esct.png" alt="Watchman by ESCT" style={{ height: 36, width: 'auto' }} />
           {title && (
             <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.45)', borderLeft: '1px solid rgba(255,255,255,0.12)', paddingLeft: 12 }}>
               {title}

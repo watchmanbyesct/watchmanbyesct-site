@@ -95,7 +95,7 @@ function Nav() {
     }}>
       <div style={{ ...maxW, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 36, width: 'auto' }} />
+          <img src="/branding/watchman-by-esct.png" alt="Watchman by ESCT" style={{ height: 36, width: 'auto' }} />
         </a>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 2 }} className="hide-mobile">
@@ -182,7 +182,7 @@ function Hero() {
         {/* Logo below CTAs */}
         <div style={{ marginTop: 40 }}>
           <img
-            src="/watchman-logo.png"
+            src="/branding/watchman-by-esct.png"
             alt="Watchman by ESCT"
             style={{ width: 400, height: 400, objectFit: 'contain', display: 'block', margin: '0 auto', mixBlendMode: 'lighten' as any }}
           />
@@ -570,7 +570,7 @@ function Footer() {
   return (
     <footer style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: '#000', padding: '36px 24px' }}>
       <div style={{ ...maxW, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-        <img src="/watchman-logo.png" alt="Watchman by ESCT" style={{ height: 32, width: 'auto' }} />
+        <img src="/branding/watchman-by-esct.png" alt="Watchman by ESCT" style={{ height: 32, width: 'auto' }} />
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>Rochester · Kingston · Manhattan</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
           <Link to="/help" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Help center</Link>
