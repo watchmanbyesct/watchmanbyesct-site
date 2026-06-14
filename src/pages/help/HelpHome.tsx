@@ -10,12 +10,12 @@ function Card({ children, style = {} }: { children: React.ReactNode; style?: Rea
     <div
       style={{
         background: '#0d0d0d',
-        border: `1px solid ${hov ? 'rgba(212,168,67,0.3)' : 'rgba(255,255,255,0.08)'}`,
+        border: `1px solid ${hov ? 'rgba(201,160,48,0.3)' : 'rgba(255,255,255,0.08)'}`,
         borderRadius: 12,
         padding: 24,
         transition: 'all 0.2s',
         transform: hov ? 'translateY(-2px)' : 'none',
-        boxShadow: hov ? '0 12px 32px rgba(212,168,67,0.1)' : 'none',
+        boxShadow: hov ? '0 12px 32px rgba(201,160,48,0.1)' : 'none',
         ...style,
       }}
       onMouseEnter={() => setHov(true)}
@@ -30,7 +30,7 @@ export default function HelpHome() {
   React.useEffect(() => {
     document.title = 'Help Center · Watchman by ESCT'
     const m = document.querySelector('meta[name="description"]')
-    if (m) m.setAttribute('content', 'Documentation and guides for Watchman Launch, Operations, and Finance.')
+    if (m) m.setAttribute('content', 'Documentation and guides for Watchman Launch, Operations, Finance, and HR.')
   }, [])
 
   return (
@@ -51,7 +51,7 @@ export default function HelpHome() {
             </h1>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>
               Step-by-step <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>how-to</strong> articles and deeper{' '}
-              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch (training and enrollment), Operations (field and command center), and Finance (billing, payroll, and ledger workflows). Everything here is written for <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>people using the products</strong>—not for IT or engineering runbooks. Open a product to browse both sections.
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch, Operations, Finance, and HR.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function HelpHome() {
             {HELP_PRODUCTS.map((p) => (
               <Link key={p.id} to={`/help/${p.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Card style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                     <BookOpen size={18} color={HELP_GOLD} />
                   </div>
                   <p style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 8 }}>{p.label}</p>

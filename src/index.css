@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e4c46e;
-  --gold-dark: #9b7a2b;
+  --wf-brand: #c9a030;
+  --wf-brand-rgb: 201, 160, 48;
+  --wf-brand-dark: #9b7a2b;
+  --wf-brand-light: #e0b840;
+  --wf-bg-app: #0a0a0a;
+  --wf-bg-page: #060606;
+  --wf-bg-surface: #0d0d0d;
+  --wf-success: #22c55e;
+  --gold: var(--wf-brand);
+  --gold-light: var(--wf-brand-light);
+  --gold-dark: var(--wf-brand-dark);
   --black: #000000;
   --surface: #0a0a0a;
   --surface-2: #111111;
-  --border: rgba(201,168,76,0.15);
+  --border: rgba(201, 160, 48, 0.15);
   --text: #f5f0e8;
   --text-muted: rgba(245,240,232,0.55);
 }
@@ -34,7 +42,7 @@ h1, h2, h3, h4 {
 }
 
 ::selection {
-  background: rgba(201,168,76,0.3);
+  background: rgba(201, 160, 48, 0.3);
   color: #fff;
 }
 
@@ -46,18 +54,18 @@ h1, h2, h3, h4 {
 /* Grid texture overlay */
 .grid-texture {
   background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(201, 160, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 160, 48, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* Glow effects */
 .glow-gold {
-  box-shadow: 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(201,168,76,0.08);
+  box-shadow: 0 0 40px rgba(201, 160, 48, 0.2), 0 0 80px rgba(201, 160, 48, 0.08);
 }
 
 .text-glow {
-  text-shadow: 0 0 40px rgba(201,168,76,0.4);
+  text-shadow: 0 0 40px rgba(201, 160, 48, 0.4);
 }
 
 /* Animated gradient border */
@@ -78,7 +86,7 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(201,168,76,0.6), rgba(155,122,43,0.2), rgba(201,168,76,0.6));
+  background: linear-gradient(135deg, rgba(201, 160, 48, 0.6), rgba(155, 122, 43, 0.2), rgba(201, 160, 48, 0.6));
   background-size: 200% 200%;
   animation: border-flow 4s ease infinite;
   z-index: -1;
@@ -153,7 +161,7 @@ h1, h2, h3, h4 {
   font-size: 0.88em;
   padding: 2px 6px;
   border-radius: 4px;
-  background: rgba(212, 168, 67, 0.12);
+  background: rgba(201, 160, 48, 0.12);
   color: #e8d5a0;
 }
 .help-md-inner pre {
@@ -173,8 +181,8 @@ h1, h2, h3, h4 {
 .help-md-inner blockquote {
   margin: 14px 0;
   padding: 10px 14px;
-  border-left: 3px solid rgba(212, 168, 67, 0.45);
-  background: rgba(212, 168, 67, 0.06);
+  border-left: 3px solid rgba(201, 160, 48, 0.45);
+  background: rgba(201, 160, 48, 0.06);
   color: rgba(255, 255, 255, 0.65);
 }
 .help-md-inner table {
@@ -206,14 +214,14 @@ h1, h2, h3, h4 {
   padding: 16px 18px;
   border-radius: 10px;
   background: #0d0d0d;
-  border: 1px solid rgba(212, 168, 67, 0.2);
+  border: 1px solid rgba(201, 160, 48, 0.2);
 }
 .help-toc-title {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #d4a843;
+  color: var(--wf-brand);
   margin: 0 0 12px;
 }
 .help-toc-list {
@@ -231,7 +239,7 @@ h1, h2, h3, h4 {
   line-height: 1.45;
 }
 .help-toc-list a:hover {
-  color: #d4a843;
+  color: var(--wf-brand);
 }
 .help-toc-list li[data-depth="3"] {
   padding-left: 14px;
@@ -263,7 +271,7 @@ h1, h2, h3, h4 {
 .help-index-toc-row a {
   font-size: 13px;
   font-weight: 500;
-  color: #d4a843;
+  color: var(--wf-brand);
   text-decoration: none;
 }
 .help-index-toc-row a:hover {

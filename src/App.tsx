@@ -5,6 +5,12 @@ import WatchmanOperations from './pages/WatchmanOperations'
 import WatchmanFinance from './pages/WatchmanFinance'
 import WatchmanHR from './pages/WatchmanHR'
 import FieldAppDownload from './pages/FieldAppDownload'
+import SignIn from './pages/SignIn'
+import WatchmanCRM from './pages/WatchmanCRM'
+import WatchmanContact from './pages/WatchmanContact'
+import WatchmanAlert from './pages/WatchmanAlert'
+import { CORE_SUITE_PRODUCTS, EXTENDED_SUITE_PRODUCTS, SUITE_PRODUCTS } from './config/suiteProducts'
+import { WF_BRAND, WF_BRAND_DARK, WF_BG_PAGE, brandGradient, brandRgba } from './lib/brand'
 
 const HelpHome = lazy(() => import('./pages/help/HelpHome'))
 const HelpProductIndex = lazy(() => import('./pages/help/HelpProductIndex'))
@@ -15,8 +21,6 @@ import {
   Bell, Check, ArrowRight, ChevronRight, Menu, X,
   ExternalLink, Building2, Church, Briefcase, MapPin
 } from 'lucide-react'
-
-const GOLD = '#d4a843'
 const maxW = { maxWidth: 1200, margin: '0 auto', padding: '0 24px' }
 
 // ── Shared card ───────────────────────────────────────────────────────────────
@@ -26,12 +30,12 @@ function Card({ children, style = {}, highlight = false }: { children: React.Rea
     <div
       style={{
         background: '#0d0d0d',
-        border: `1px solid ${hov || highlight ? 'rgba(212,168,67,0.3)' : 'rgba(255,255,255,0.08)'}`,
+        border: `1px solid ${hov || highlight ? brandRgba(0.3) : 'rgba(255,255,255,0.08)'}`,
         borderRadius: 12,
         padding: 24,
         transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
         transform: hov ? 'translateY(-2px)' : 'none',
-        boxShadow: hov ? '0 12px 32px rgba(212,168,67,0.12)' : highlight ? '0 0 32px rgba(212,168,67,0.08)' : 'none',
+        boxShadow: hov ? `0 12px 32px ${brandRgba(0.12)}` : highlight ? `0 0 32px ${brandRgba(0.08)}` : 'none',
         ...style,
       }}
       onMouseEnter={() => setHov(true)}
@@ -44,7 +48,7 @@ function Card({ children, style = {}, highlight = false }: { children: React.Rea
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>
+    <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 12 }}>
       {children}
     </p>
   )
@@ -83,6 +87,7 @@ function Nav() {
     { label: 'About', href: '#about' },
     { label: 'Help', href: '/help' },
     { label: 'Field app', href: '/field-app' },
+    { label: 'Sign in', href: '/sign-in' },
   ]
 
   return (
@@ -110,7 +115,7 @@ function Nav() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
 
-          <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+          <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, textDecoration: 'none' }}>
             Request Demo
           </a>
           <button onClick={() => setOpen(!open)} className="show-mobile" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', padding: 8 }}>
@@ -141,13 +146,13 @@ function Hero() {
       padding: '100px 24px 80px', position: 'relative', overflow: 'hidden', textAlign: 'center',
     }}>
       {/* Background glow */}
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,168,67,0.1), transparent 65%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,160,48,0.1), transparent 65%)', pointerEvents: 'none' }} />
 
       <div style={{ maxWidth: 760, position: 'relative' }}>
         {/* Badge */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '5px 14px', borderRadius: 999, border: `1px solid rgba(212,168,67,0.2)`, background: 'rgba(212,168,67,0.05)', marginBottom: 28 }}>
-          <span style={{ width: 5, height: 5, borderRadius: '50%', background: GOLD, display: 'inline-block' }} />
-          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', color: GOLD }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '5px 14px', borderRadius: 999, border: `1px solid rgba(201,160,48,0.2)`, background: 'rgba(201,160,48,0.05)', marginBottom: 28 }}>
+          <span style={{ width: 5, height: 5, borderRadius: '50%', background: WF_BRAND, display: 'inline-block' }} />
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', color: WF_BRAND }}>
             Built by security professionals
           </span>
         </div>
@@ -161,17 +166,17 @@ function Hero() {
           color: '#fff',
           marginBottom: 20,
         }}>
-          Security operations, <span style={{ background: `linear-gradient(135deg,${GOLD},#e8c06a)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>elevated.</span>
+          Security operations, <span style={{ background: `linear-gradient(135deg,${WF_BRAND},#e8c06a)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>elevated.</span>
         </h1>
 
         {/* Subhead */}
         <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: 580, margin: '0 auto 36px', fontWeight: 400 }}>
-          Watchman is a purpose-built platform for security companies, nonprofits, and faith-based organizations, combining training management, people operations, field operations, and finance in one unified system.
+          Watchman is a purpose-built suite for security companies, nonprofits, and faith-based organizations—combining training, people operations, field execution, finance, and emergency response in one unified platform.
         </p>
 
         {/* CTAs */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 12, marginBottom: 64 }}>
-          <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+          <a href="#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, textDecoration: 'none' }}>
             Request a Demo <ArrowRight size={16} />
           </a>
           <a href="#products" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>
@@ -219,8 +224,8 @@ function Platform() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
           {FEATURES.map(({ icon: Icon, title, desc }) => (
             <Card key={title}>
-              <div style={{ width: 38, height: 38, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                <Icon size={17} color={GOLD} />
+              <div style={{ width: 38, height: 38, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                <Icon size={17} color={WF_BRAND} />
               </div>
               <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 7 }}>{title}</p>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>{desc}</p>
@@ -233,77 +238,89 @@ function Platform() {
 }
 
 // ── Products ──────────────────────────────────────────────────────────────────
-const PRODUCTS = [
-  {
-    badge: 'Live', badgeColor: '#22c55e',
-    name: 'Watchman Launch',
-    tagline: 'Training Enrollment Platform',
-    desc: 'The complete training management solution for security guard academies. Manage courses, enrollments, payments, and certifications in one place.',
-    features: ['DCJS-compliant course management', 'Online enrollment with Stripe', 'Automated email confirmations', 'Student records and certificates', 'Full admin CMS', 'Multi-role access control'],
-    cta: 'Learn More', href: '/launch', external: false, highlight: false,
-  },
-  {
-    badge: 'In Development', badgeColor: GOLD,
-    name: 'Watchman HR',
-    tagline: 'People & Workforce Platform',
-    desc: 'Recruiting, onboarding, and workforce context built for security organizations—so hiring, credentials, and deployment stay connected instead of scattered across inboxes and spreadsheets.',
-    features: ['Applicant pipeline and careers publishing', 'References, checks, and offer workflows', 'Onboarding aligned to training and credentials', 'Role-based HR visibility and governance', 'Hiring analytics for leadership and HR', 'Designed to connect with Launch, Operations, and Finance'],
-    cta: 'Learn More', href: '/hr', external: false, highlight: false,
-  },
-  {
-    badge: 'In Development', badgeColor: GOLD,
-    name: 'Watchman Operations',
-    tagline: 'Security Operations Platform',
-    desc: 'Real-time operations management for guard companies. Shift scheduling, post orders, incident tracking, and client reporting built for the field.',
-    features: ['Guard scheduling and deployment', 'Post orders and site management', 'Incident reporting and escalation', 'Client portal and reporting', 'Mobile-ready for field use', 'Multi-site and multi-client'],
-    cta: 'Learn More', href: '/operations', external: false, highlight: true,
-  },
-  {
-    badge: 'New', badgeColor: '#22c55e',
-    name: 'Watchman Finance',
-    tagline: 'Financial Operations Platform',
-    desc: 'Finance workflows built for security organizations. Track invoicing, payments, payroll readiness, and financial reporting with accountability tied to operations.',
-    features: ['Invoice and billing workflows', 'Payment tracking and reconciliation', 'Payroll readiness and labor cost visibility', 'Client account and contract tracking', 'Financial dashboards and exports', 'Connected to Watchman operations data'],
-    cta: 'Learn More', href: '/finance', external: false, highlight: false,
-  },
-]
-
 function Products() {
+  const toCard = (p: (typeof SUITE_PRODUCTS)[number]) => ({
+    badge: p.statusLabel,
+    badgeColor: p.statusColor,
+    name: p.name,
+    tagline: p.tagline,
+    desc: p.description,
+    features: p.features,
+    cta: 'Learn More',
+    href: p.landingPath,
+    external: false,
+    highlight: p.highlight ?? false,
+  })
+
+  const core = CORE_SUITE_PRODUCTS.map(toCard)
+  const extended = EXTENDED_SUITE_PRODUCTS.map(toCard)
+
   return (
     <section id="products" style={{ padding: 'clamp(72px,8vw,100px) 24px', background: '#060606' }}>
       <div style={maxW}>
         <div style={{ marginBottom: 48 }}>
           <SectionLabel>Products</SectionLabel>
           <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 700, color: '#fff', letterSpacing: '-0.02em', marginBottom: 14 }}>
-            Four platforms, one mission
+            One suite, seven platforms
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, maxWidth: 640, lineHeight: 1.7 }}>
-            Each Watchman product is designed to stand on its own—yet they are built to work together, so training, people, operations, and finance reinforce the same standards from the first application to the final invoice.
+          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, maxWidth: 720, lineHeight: 1.7 }}>
+            Each Watchman product is designed to stand on its own—yet they share one tenant identity, module entitlements, and integration contracts so training, people, operations, finance, and emergency response reinforce the same standards from the first application to the final invoice.
           </p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: 18 }}>
-          {PRODUCTS.map(p => (
+          {core.map(p => (
             <Card key={p.name} highlight={p.highlight} style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 999, background: `${p.badgeColor}15`, color: p.badgeColor, border: `1px solid ${p.badgeColor}30`, display: 'inline-block', marginBottom: 20 }}>
                 {p.badge}
               </span>
               <p style={{ fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 4, letterSpacing: '-0.02em' }}>{p.name}</p>
-              <p style={{ fontSize: 13, fontWeight: 500, color: GOLD, marginBottom: 14 }}>{p.tagline}</p>
+              <p style={{ fontSize: 13, fontWeight: 500, color: WF_BRAND, marginBottom: 14 }}>{p.tagline}</p>
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, marginBottom: 22 }}>{p.desc}</p>
               <ul style={{ display: 'grid', gap: 9, flex: 1, marginBottom: 26 }}>
                 {p.features.map(f => (
                   <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>
-                    <Check size={13} color={GOLD} style={{ flexShrink: 0 }} />{f}
+                    <Check size={13} color={WF_BRAND} style={{ flexShrink: 0 }} />{f}
                   </li>
                 ))}
               </ul>
               <a href={p.href} target={p.external ? '_blank' : undefined} rel="noopener"
-                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 7, padding: '11px 20px', borderRadius: 8, fontWeight: 600, fontSize: 13, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 7, padding: '11px 20px', borderRadius: 8, fontWeight: 600, fontSize: 13, color: '#000', background: brandGradient, textDecoration: 'none' }}>
                 {p.cta} <ArrowRight size={14} />
               </a>
             </Card>
           ))}
         </div>
+
+        {extended.length > 0 ? (
+          <div style={{ marginTop: 40 }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 16 }}>
+              Extended suite
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr))', gap: 18 }}>
+              {extended.map(p => (
+                <Card key={p.name} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 999, background: `${p.badgeColor}15`, color: p.badgeColor, border: `1px solid ${p.badgeColor}30`, display: 'inline-block', marginBottom: 20 }}>
+                    {p.badge}
+                  </span>
+                  <p style={{ fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 4, letterSpacing: '-0.02em' }}>{p.name}</p>
+                  <p style={{ fontSize: 13, fontWeight: 500, color: WF_BRAND, marginBottom: 14 }}>{p.tagline}</p>
+                  <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, marginBottom: 22 }}>{p.desc}</p>
+                  <ul style={{ display: 'grid', gap: 9, flex: 1, marginBottom: 26 }}>
+                    {p.features.slice(0, 4).map(f => (
+                      <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>
+                        <Check size={13} color={WF_BRAND} style={{ flexShrink: 0 }} />{f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href={p.href}
+                    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 7, padding: '11px 20px', borderRadius: 8, fontWeight: 600, fontSize: 13, color: WF_BRAND, background: brandRgba(0.07), border: `1px solid ${brandRgba(0.18)}`, textDecoration: 'none' }}>
+                    {p.cta} <ArrowRight size={14} />
+                  </a>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   )
@@ -330,8 +347,8 @@ function WhoWeServe() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 14 }}>
           {SEGMENTS.map(({ icon: Icon, title, desc }) => (
             <Card key={title}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                <Icon size={18} color={GOLD} />
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                <Icon size={18} color={WF_BRAND} />
               </div>
               <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 7 }}>{title}</p>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{desc}</p>
@@ -352,27 +369,27 @@ const PLANS = [
     cta: 'Get Started', href: '#demo', highlight: false,
   },
   {
-    name: 'HR', price: 'Coming Soon',
+    name: 'HR', price: 'Contact us',
     desc: 'Watchman HR for recruiting, onboarding, and workforce records tied to training and deployment.',
     features: ['Careers and applicant pipeline', 'References and background workflows', 'Onboarding and credential readiness', 'Employee records with governed access', 'Hiring analytics', 'Connected to Launch and Operations'],
-    cta: 'Request Early Access', href: '#demo', highlight: false,
+    cta: 'Request Demo', href: '#demo', highlight: false,
   },
   {
-    name: 'Operations', price: 'Coming Soon',
+    name: 'Operations', price: 'Contact us',
     desc: 'Watchman Operations for security guard companies and multi-site deployments.',
     features: ['Guard scheduling', 'Post order management', 'Incident reporting', 'Client portal', 'Mobile field access', 'Multi-site support'],
-    cta: 'Request Early Access', href: '#demo', highlight: true,
+    cta: 'Request Demo', href: '#demo', highlight: true,
   },
   {
-    name: 'Finance', price: 'Coming Soon',
+    name: 'Finance', price: 'Contact us',
     desc: 'Watchman Finance for billing workflows, reconciliation, payroll readiness, and financial visibility.',
     features: ['Client invoicing workflows', 'Payment tracking and reconciliation', 'Payroll readiness support', 'Labor and service cost visibility', 'Financial exports and reporting', 'Role-based finance controls'],
-    cta: 'Request Early Access', href: '#demo', highlight: false,
+    cta: 'Request Demo', href: '#demo', highlight: false,
   },
   {
     name: 'Enterprise', price: 'Custom',
-    desc: 'Full Watchman suite with custom integrations, dedicated support, and white-label options.',
-    features: ['Everything in Launch, HR, Operations, and Finance', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee', 'On-site training'],
+    desc: 'Full Watchman suite with CRM, Contact, Alert, custom integrations, dedicated support, and white-label options.',
+    features: ['Everything in Launch, HR, Operations, and Finance', 'CRM, Contact, and Alert modules', 'Custom integrations', 'White-label options', 'Dedicated account manager', 'SLA guarantee'],
     cta: 'Talk to Sales', href: '#demo', highlight: false,
   },
 ]
@@ -392,15 +409,15 @@ function Pricing() {
           {PLANS.map(p => (
             <Card key={p.name} highlight={p.highlight} style={{ display: 'flex', flexDirection: 'column' }}>
               {p.highlight && (
-                <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Most Popular</p>
+                <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 10 }}>Most Popular</p>
               )}
               <p style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 4 }}>{p.name}</p>
-              <p style={{ fontSize: 24, fontWeight: 700, color: p.highlight ? GOLD : '#fff', marginBottom: 10 }}>{p.price}</p>
+              <p style={{ fontSize: 24, fontWeight: 700, color: p.highlight ? WF_BRAND : '#fff', marginBottom: 10 }}>{p.price}</p>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6, marginBottom: 18, paddingBottom: 18, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>{p.desc}</p>
               <ul style={{ display: 'grid', gap: 9, flex: 1, marginBottom: 22 }}>
                 {p.features.map(f => (
                   <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>
-                    <Check size={13} color={GOLD} style={{ flexShrink: 0 }} />{f}
+                    <Check size={13} color={WF_BRAND} style={{ flexShrink: 0 }} />{f}
                   </li>
                 ))}
               </ul>
@@ -408,8 +425,8 @@ function Pricing() {
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 7,
                 padding: '11px 18px', borderRadius: 8, fontWeight: 600, fontSize: 13, textDecoration: 'none',
                 ...(p.highlight
-                  ? { color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)` }
-                  : { color: GOLD, background: 'rgba(212,168,67,0.07)', border: `1px solid rgba(212,168,67,0.18)` }),
+                  ? { color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)` }
+                  : { color: WF_BRAND, background: 'rgba(201,160,48,0.07)', border: `1px solid rgba(201,160,48,0.18)` }),
               }}>
                 {p.cta} <ArrowRight size={13} />
               </a>
@@ -442,7 +459,7 @@ function About() {
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {['Rochester, NY, HQ', 'Kingston, NY', 'Manhattan, NYC'].map(loc => (
-                <span key={loc} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 500, padding: '5px 11px', borderRadius: 999, background: 'rgba(212,168,67,0.05)', color: GOLD, border: '1px solid rgba(212,168,67,0.18)' }}>
+                <span key={loc} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 500, padding: '5px 11px', borderRadius: 999, background: 'rgba(201,160,48,0.05)', color: WF_BRAND, border: '1px solid rgba(201,160,48,0.18)' }}>
                   <MapPin size={10} /> {loc}
                 </span>
               ))}
@@ -457,7 +474,7 @@ function About() {
               { value: 'DCJS', label: 'Certified Trainer' },
             ].map(s => (
               <Card key={s.label}>
-                <p style={{ fontSize: 26, fontWeight: 700, color: GOLD, marginBottom: 5 }}>{s.value}</p>
+                <p style={{ fontSize: 26, fontWeight: 700, color: WF_BRAND, marginBottom: 5 }}>{s.value}</p>
                 <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>{s.label}</p>
               </Card>
             ))}
@@ -499,7 +516,7 @@ function DemoForm() {
 
   return (
     <section id="demo" style={{ padding: 'clamp(72px,8vw,100px) 24px', background: '#060606', position: 'relative' }}>
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(212,168,67,0.04), transparent)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 50% 50%, rgba(201,160,48,0.04), transparent)', pointerEvents: 'none' }} />
       <div style={{ maxWidth: 620, margin: '0 auto', position: 'relative' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <SectionLabel>Get Started</SectionLabel>
@@ -513,8 +530,8 @@ function DemoForm() {
 
         {success ? (
           <Card style={{ textAlign: 'center', padding: 48 }}>
-            <div style={{ width: 52, height: 52, borderRadius: 14, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}>
-              <Check size={22} color={GOLD} />
+            <div style={{ width: 52, height: 52, borderRadius: 14, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}>
+              <Check size={22} color={WF_BRAND} />
             </div>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 8 }}>Request received</h3>
             <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 14 }}>We'll be in touch within one business day.</p>
@@ -546,16 +563,20 @@ function DemoForm() {
                     <option value="operations">Watchman Operations</option>
                     <option value="hr">Watchman HR</option>
                     <option value="finance">Watchman Finance</option>
+                    <option value="crm">Watchman CRM</option>
+                    <option value="contact">Watchman Contact</option>
+                    <option value="alert">Watchman Alert</option>
+                    <option value="enterprise">Full suite / Enterprise</option>
                   </select>
                 </div>
               </div>
               <div><label style={labelBase}>Message</label><textarea style={{ ...inputBase, minHeight: 88, resize: 'vertical' }} value={form.message} onChange={set('message')} placeholder="Tell us what you're looking to solve..." /></div>
-              <button type="submit" disabled={loading} style={{ width: '100%', padding: '13px', borderRadius: 8, fontWeight: 600, fontSize: 14, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: 'inherit' }}>
+              <button type="submit" disabled={loading} style={{ width: '100%', padding: '13px', borderRadius: 8, fontWeight: 600, fontSize: 14, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: 'inherit' }}>
                 {loading ? 'Submitting...' : 'Submit Request →'}
               </button>
               <p style={{ textAlign: 'center', fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
                 We respond within one business day ·{' '}
-                <a href="mailto:info@watchmanbyesct.com" style={{ color: GOLD, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
+                <a href="mailto:info@watchmanbyesct.com" style={{ color: WF_BRAND, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
               </p>
             </form>
           </Card>
@@ -573,6 +594,7 @@ function Footer() {
         <img src="/branding/watchman-by-esct.png" alt="Watchman by ESCT" style={{ height: 32, width: 'auto' }} />
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>Rochester · Kingston · Manhattan</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
+          <Link to="/sign-in" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Sign in</Link>
           <Link to="/help" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Help center</Link>
           <a href="/field-app" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>Field app</a>
           <a href="https://esctroc.com" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.28)', textDecoration: 'none' }}>esctroc.com</a>
@@ -581,7 +603,7 @@ function Footer() {
         </div>
       </div>
       <div style={{ ...maxW, marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.04)', fontSize: 11, color: 'rgba(255,255,255,0.18)', textAlign: 'center' }}>
-        © {new Date().getFullYear()} ESCT Holdings Inc. All rights reserved. Developed by Owens F. Shepard. E.S.C.T. USPTO Reg. No. 8,075,647
+        Powered by Watchman by ESCT · © {new Date().getFullYear()} ESCT Holdings Inc. All rights reserved. Developed by Owens F. Shepard. E.S.C.T. USPTO Reg. No. 8,075,647
       </div>
     </footer>
   )
@@ -592,12 +614,12 @@ function Home() {
   return (
     <div style={{ background: '#060606', minHeight: '100vh' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #fff; background: #060606; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        h1, h2, h3, h4 { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-        ::selection { background: rgba(212,168,67,0.22); }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: #fff; background: #060606; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: 'Syne', 'DM Sans', sans-serif; }
+        ::selection { background: rgba(201,160,48,0.22); }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: #6b5520; border-radius: 2px; }
@@ -636,7 +658,7 @@ function HelpRouteFallback() {
       minHeight: '100vh', background: '#060606', display: 'flex',
       alignItems: 'center', justifyContent: 'center', fontFamily: 'Inter, system-ui, sans-serif',
     }}>
-      <span style={{ color: GOLD, fontSize: 14, fontWeight: 500 }}>Loading…</span>
+      <span style={{ color: WF_BRAND, fontSize: 14, fontWeight: 500 }}>Loading…</span>
     </div>
   )
 }
@@ -650,6 +672,10 @@ export default function App() {
         <Route path="/operations" element={<WatchmanOperations />} />
         <Route path="/finance" element={<WatchmanFinance />} />
         <Route path="/hr" element={<WatchmanHR />} />
+        <Route path="/crm" element={<WatchmanCRM />} />
+        <Route path="/contact" element={<WatchmanContact />} />
+        <Route path="/alert" element={<WatchmanAlert />} />
+        <Route path="/sign-in" element={<SignIn />} />
         <Route path="/field-app" element={<FieldAppDownload />} />
         <Route path="/help" element={<HelpHome />} />
         <Route path="/help/:product" element={<HelpProductIndex />} />

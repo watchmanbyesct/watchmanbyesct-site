@@ -80,7 +80,7 @@ export default function HelpProductIndex() {
                         padding: '16px 18px',
                         borderRadius: 10,
                         background: '#0d0d0d',
-                        border: '1px solid rgba(212,168,67,0.22)',
+                        border: '1px solid rgba(201,160,48,0.22)',
                         textDecoration: 'none',
                         color: '#fff',
                         transition: 'border-color 0.15s',

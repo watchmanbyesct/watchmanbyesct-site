@@ -6,7 +6,7 @@ import {
   Briefcase, MessageSquare, Award, Building2, ChevronRight
 } from 'lucide-react'
 
-const GOLD = '#d4a843'
+import { WF_BRAND, brandGradient } from '../lib/brand'
 
 function Nav() {
   return (
@@ -23,7 +23,7 @@ function Nav() {
           <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
             <ArrowLeft size={14} /> Back to home
           </Link>
-          <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+          <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 18px', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, textDecoration: 'none' }}>
             Request Demo
           </a>
         </div>
@@ -37,10 +37,10 @@ function Card({ children, style = {} }: { children: React.ReactNode; style?: Rea
   return (
     <div style={{
       background: '#0d0d0d',
-      border: `1px solid ${hov ? 'rgba(212,168,67,0.3)' : 'rgba(255,255,255,0.08)'}`,
+      border: `1px solid ${hov ? 'rgba(201,160,48,0.3)' : 'rgba(255,255,255,0.08)'}`,
       borderRadius: 12, padding: 24, transition: 'all 0.2s',
       transform: hov ? 'translateY(-2px)' : 'none',
-      boxShadow: hov ? '0 12px 32px rgba(212,168,67,0.1)' : 'none', ...style,
+      boxShadow: hov ? '0 12px 32px rgba(201,160,48,0.1)' : 'none', ...style,
     }}
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
       {children}
@@ -49,7 +49,7 @@ function Card({ children, style = {} }: { children: React.ReactNode; style?: Rea
 }
 
 function SL({ children }: { children: React.ReactNode }) {
-  return <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>{children}</p>
+  return <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 12 }}>{children}</p>
 }
 
 function Divider() {
@@ -153,16 +153,16 @@ export default function WatchmanLaunch() {
       <Nav />
 
       {/* Hero */}
-      <section style={{ padding: '120px 24px 80px', background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,168,67,0.1), transparent 60%)' }}>
+      <section style={{ padding: '120px 24px 80px', background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201,160,48,0.1), transparent 60%)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '4px 12px', borderRadius: 999, border: `1px solid rgba(212,168,67,0.2)`, background: 'rgba(212,168,67,0.05)', marginBottom: 24 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '4px 12px', borderRadius: 999, border: `1px solid rgba(201,160,48,0.2)`, background: 'rgba(201,160,48,0.05)', marginBottom: 24 }}>
             <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#22c55e', display: 'inline-block' }} />
             <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', color: '#22c55e' }}>Live Now</span>
           </div>
           <h1 style={{ fontSize: 'clamp(2.2rem,4vw,3.4rem)', fontWeight: 700, letterSpacing: '-0.025em', color: '#fff', marginBottom: 16, lineHeight: 1.1 }}>
             Watchman Launch
           </h1>
-          <p style={{ fontSize: 20, fontWeight: 500, color: GOLD, marginBottom: 20 }}>
+          <p style={{ fontSize: 20, fontWeight: 500, color: WF_BRAND, marginBottom: 20 }}>
             Digital Growth and Organizational Platform for Security Companies
           </p>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, maxWidth: 680, marginBottom: 16 }}>
@@ -172,13 +172,13 @@ export default function WatchmanLaunch() {
             It is the entry point into the Watchman ecosystem — what helps a security company go from loosely organized and manually managed to digitally structured and growth-ready.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-            <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+            <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, textDecoration: 'none' }}>
               Request a Demo <ArrowRight size={16} />
             </a>
             <a href="/Watchman_Launch_Spec_Sheet.pdf" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>
               Download Spec Sheet
             </a>
-            <Link to="/help/launch" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(212,168,67,0.35)', background: 'rgba(212,168,67,0.06)', textDecoration: 'none' }}>
+            <Link to="/help/launch" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(201,160,48,0.35)', background: 'rgba(201,160,48,0.06)', textDecoration: 'none' }}>
               Help articles
             </Link>
           </div>
@@ -214,7 +214,7 @@ export default function WatchmanLaunch() {
                 'Serve as the public and organizational gateway into the broader Watchman environment',
               ].map(item => (
                 <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-                  <ChevronRight size={14} style={{ color: GOLD, flexShrink: 0, marginTop: 3 }} />
+                  <ChevronRight size={14} style={{ color: WF_BRAND, flexShrink: 0, marginTop: 3 }} />
                   <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>{item}</p>
                 </div>
               ))}
@@ -263,7 +263,7 @@ export default function WatchmanLaunch() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 16 }}>
             {STEPS.map(s => (
               <div key={s.n} style={{ padding: '28px 24px', borderRadius: 12, background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)' }}>
-                <div style={{ fontSize: 28, fontWeight: 700, color: GOLD, marginBottom: 14, opacity: 0.6 }}>{s.n}</div>
+                <div style={{ fontSize: 28, fontWeight: 700, color: WF_BRAND, marginBottom: 14, opacity: 0.6 }}>{s.n}</div>
                 <p style={{ fontSize: 15, fontWeight: 600, color: '#fff', marginBottom: 8 }}>{s.title}</p>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>{s.desc}</p>
               </div>
@@ -287,8 +287,8 @@ export default function WatchmanLaunch() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <Card key={title}>
-                <div style={{ width: 38, height: 38, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <Icon size={17} color={GOLD} />
+                <div style={{ width: 38, height: 38, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
+                  <Icon size={17} color={WF_BRAND} />
                 </div>
                 <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 7 }}>{title}</p>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>{desc}</p>
@@ -321,7 +321,7 @@ export default function WatchmanLaunch() {
                   'Lead and inquiry management',
                 ].map(item => (
                   <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <div style={{ width: 5, height: 5, borderRadius: '50%', background: GOLD, flexShrink: 0 }} />
+                    <div style={{ width: 5, height: 5, borderRadius: '50%', background: WF_BRAND, flexShrink: 0 }} />
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{item}</p>
                   </div>
                 ))}
@@ -349,9 +349,9 @@ export default function WatchmanLaunch() {
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: 20, padding: '14px 16px', borderRadius: 10, background: 'rgba(212,168,67,0.06)', border: '1px solid rgba(212,168,67,0.15)' }}>
+              <div style={{ marginTop: 20, padding: '14px 16px', borderRadius: 10, background: 'rgba(201,160,48,0.06)', border: '1px solid rgba(201,160,48,0.15)' }}>
                 <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', lineHeight: 1.6 }}>
-                  These capabilities belong to <span style={{ color: GOLD, fontWeight: 600 }}>Watchman Security Operations</span> — the deep command-and-control platform currently in development.
+                  These capabilities belong to <span style={{ color: WF_BRAND, fontWeight: 600 }}>Watchman Security Operations</span> — the operational command platform in the Watchman suite.
                 </p>
               </div>
             </div>
@@ -396,7 +396,7 @@ export default function WatchmanLaunch() {
             Request a demo to see a personalized walkthrough of Watchman Launch, or download the spec sheet to review the full platform details.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
-            <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${GOLD},#9b7a2b)`, textDecoration: 'none' }}>
+            <a href="/#demo" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 600, fontSize: 15, color: '#000', background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`, textDecoration: 'none' }}>
               Request a Demo <ArrowRight size={16} />
             </a>
             <a href="/Watchman_Launch_Spec_Sheet.pdf" target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', borderRadius: 8, fontWeight: 500, fontSize: 15, color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', textDecoration: 'none' }}>
@@ -404,7 +404,7 @@ export default function WatchmanLaunch() {
             </a>
           </div>
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)', marginTop: 16 }}>
-            Questions? <a href="mailto:info@watchmanbyesct.com" style={{ color: GOLD, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
+            Questions? <a href="mailto:info@watchmanbyesct.com" style={{ color: WF_BRAND, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
           </p>
         </div>
       </section>

@@ -1,4 +1,4 @@
-export type HelpProductId = 'launch' | 'operations' | 'finance'
+export type HelpProductId = 'launch' | 'operations' | 'finance' | 'hr'
 
 /** Minimal frontmatter parser (no eval); our help files use simple key: value YAML. */
 function parseSimpleFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
@@ -50,6 +50,11 @@ export const HELP_PRODUCTS: { id: HelpProductId; label: string; description: str
     label: 'Watchman Finance',
     description: 'GL, AR/AP, payroll, banking, integrations, and platform governance.',
   },
+  {
+    id: 'hr',
+    label: 'Watchman HR',
+    description: 'Recruiting, onboarding, people records, compensation, and workforce governance.',
+  },
 ]
 
 export type HelpArticleKind = 'how-to' | 'guide'
@@ -74,7 +79,7 @@ const rawModules = import.meta.glob<string>('../../content/help/**/*.md', {
 })
 
 function parseKey(path: string): { product: HelpProductId; slug: string } | null {
-  const m = path.match(/\/content\/help\/(launch|operations|finance)\/([^/]+)\.md$/)
+  const m = path.match(/\/content\/help\/(launch|operations|finance|hr)\/([^/]+)\.md$/)
   if (!m) return null
   return { product: m[1] as HelpProductId, slug: m[2] }
 }
@@ -123,5 +128,5 @@ export function getHelpArticle(product: HelpProductId, slug: string): HelpArticl
 }
 
 export function isHelpProductId(s: string): s is HelpProductId {
-  return s === 'launch' || s === 'operations' || s === 'finance'
+  return s === 'launch' || s === 'operations' || s === 'finance' || s === 'hr'
 }

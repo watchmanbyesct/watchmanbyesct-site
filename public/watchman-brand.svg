@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Watchman by ESCT">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0b840"/>
+      <stop offset="50%" stop-color="#c9a030"/>
+      <stop offset="100%" stop-color="#9b7a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="160" rx="24" fill="#0a0a0a"/>
+  <path fill="url(#gold)" d="M48 24 L112 48 V96 C112 124 92 146 68 156 C44 146 24 124 24 96 V48 Z"/>
+  <path fill="#0a0a0a" d="M68 52 L96 64 V92 C96 108 84 120 68 126 C52 120 40 108 40 92 V64 Z"/>
+  <text x="68" y="104" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="700" fill="url(#gold)">W</text>
+  <text x="140" y="72" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#f7f7f8">WATCHMAN</text>
+  <text x="140" y="108" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#c9a030" letter-spacing="4">BY ESCT</text>
+</svg>

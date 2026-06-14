@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 
-export const HELP_GOLD = '#d4a843'
+import { WF_BRAND } from '../../lib/brand'
+
+export { WF_BRAND as HELP_GOLD } from '../../lib/brand'
 export const helpMaxW: React.CSSProperties = { maxWidth: 1200, margin: '0 auto', padding: '0 24px' }
 
 export function HelpNav({ title }: { title?: string }) {
@@ -48,7 +50,7 @@ export function HelpFooterChrome() {
         <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)' }}>
           © {new Date().getFullYear()} ESCT Holdings Inc.
         </span>
-        <Link to="/help" style={{ fontSize: 12, color: HELP_GOLD, textDecoration: 'none' }}>
+        <Link to="/help" style={{ fontSize: 12, color: WF_BRAND, textDecoration: 'none' }}>
           Help center
         </Link>
       </div>

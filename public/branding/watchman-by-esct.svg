@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Watchman by ESCT">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0b840"/>
+      <stop offset="50%" stop-color="#c9a030"/>
+      <stop offset="100%" stop-color="#9b7a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+  <path fill="url(#gold)" d="M256 72 L392 132 V248 C392 340 334 404 256 440 C178 404 120 340 120 248 V132 Z"/>
+  <path fill="#0a0a0a" d="M256 128 L344 168 V244 C344 308 308 352 256 376 C204 352 168 308 168 244 V168 Z"/>
+  <text x="256" y="292" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="108" font-weight="700" fill="url(#gold)">W</text>
+</svg>

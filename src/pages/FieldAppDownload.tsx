@@ -4,7 +4,7 @@ import { ArrowLeft, Smartphone, Share2, PlusSquare } from 'lucide-react'
 import QRCode from 'react-qr-code'
 import { WATCHMAN_OPERATIONS_APP_URL } from '../config/fieldApp'
 
-const GOLD = '#d4a843'
+import { WF_BRAND, brandGradient, brandRgba } from '../lib/brand'
 const maxW = { maxWidth: 720, margin: '0 auto', padding: '0 24px' }
 
 function Nav() {
@@ -34,7 +34,7 @@ export default function FieldAppDownload() {
       <Nav />
       <section style={{ padding: 'clamp(48px,6vw,80px) 24px 80px' }}>
         <div style={maxW}>
-          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 12 }}>
             Watchman Operations
           </p>
           <h1 style={{
@@ -89,7 +89,7 @@ export default function FieldAppDownload() {
                   wordBreak: 'break-all',
                   fontSize: 15,
                   fontWeight: 600,
-                  color: GOLD,
+                  color: WF_BRAND,
                   textDecoration: 'none',
                   marginBottom: 20,
                 }}
@@ -105,7 +105,7 @@ export default function FieldAppDownload() {
                   fontSize: 13,
                   fontWeight: 600,
                   color: '#000',
-                  background: `linear-gradient(135deg,${GOLD},#9b7a2b)`,
+                  background: `linear-gradient(135deg,${WF_BRAND},#9b7a2b)`,
                   border: 'none',
                   cursor: 'pointer',
                   fontFamily: 'inherit',
@@ -117,13 +117,13 @@ export default function FieldAppDownload() {
           </div>
 
           <div style={{ marginTop: 44, paddingTop: 32, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-            <p style={{ fontSize: 12, fontWeight: 600, color: GOLD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <p style={{ fontSize: 12, fontWeight: 600, color: WF_BRAND, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               Add to home screen
             </p>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 16 }}>
               <li style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Share2 size={18} color={GOLD} />
+                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Share2 size={18} color={WF_BRAND} />
                 </span>
                 <div>
                   <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 4 }}>iPhone / iPad (Safari)</p>
@@ -133,8 +133,8 @@ export default function FieldAppDownload() {
                 </div>
               </li>
               <li style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <PlusSquare size={18} color={GOLD} />
+                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <PlusSquare size={18} color={WF_BRAND} />
                 </span>
                 <div>
                   <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 4 }}>Android (Chrome)</p>
@@ -144,8 +144,8 @@ export default function FieldAppDownload() {
                 </div>
               </li>
               <li style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Smartphone size={18} color={GOLD} />
+                <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'rgba(201,160,48,0.08)', border: '1px solid rgba(201,160,48,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Smartphone size={18} color={WF_BRAND} />
                 </span>
                 <div>
                   <p style={{ fontSize: 14, fontWeight: 600, color: '#fff', marginBottom: 4 }}>Desktop</p>
@@ -159,7 +159,7 @@ export default function FieldAppDownload() {
 
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.28)', marginTop: 32, lineHeight: 1.6 }}>
             Questions?{' '}
-            <a href="mailto:info@watchmanbyesct.com" style={{ color: GOLD, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
+            <a href="mailto:info@watchmanbyesct.com" style={{ color: WF_BRAND, textDecoration: 'none' }}>info@watchmanbyesct.com</a>
           </p>
         </div>
       </section>
