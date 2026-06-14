@@ -30,7 +30,7 @@ export default function HelpHome() {
   React.useEffect(() => {
     document.title = 'Help Center · Watchman by ESCT'
     const m = document.querySelector('meta[name="description"]')
-    if (m) m.setAttribute('content', 'Documentation and guides for Watchman Launch, Operations, Finance, and HR.')
+    if (m) m.setAttribute('content', 'Documentation and guides for Watchman Suite — Launch, Academy, Operations, Finance, and HR.')
   }, [])
 
   return (
@@ -51,7 +51,10 @@ export default function HelpHome() {
             </h1>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>
               Step-by-step <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>how-to</strong> articles and deeper{' '}
-              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>product guides</strong> for Watchman Launch, Operations, Finance, and HR.
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>module guides</strong> for Watchman Suite.{' '}
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>Launch</strong> covers the public website;{' '}
+              <strong style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>Academy</strong> covers the training module.{' '}
+              Operations, Finance, and HR cover their staff portals. Roadmap modules (Bed Check, Alert, Access, Facilities, ID) are not documented here yet.
             </p>
           </div>
 

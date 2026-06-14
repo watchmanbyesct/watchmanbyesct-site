@@ -35,7 +35,7 @@ export default function FieldAppDownload() {
       <section style={{ padding: 'clamp(48px,6vw,80px) 24px 80px' }}>
         <div style={maxW}>
           <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', color: WF_BRAND, marginBottom: 12 }}>
-            Watchman Operations
+            Watchman Suite · Operations
           </p>
           <h1 style={{
             fontSize: 'clamp(1.75rem,4vw,2.25rem)',

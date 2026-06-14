@@ -1,4 +1,16 @@
-export type HelpProductId = 'launch' | 'operations' | 'finance' | 'hr'
+export type HelpProductId = 'launch' | 'academy' | 'operations' | 'finance' | 'hr'
+
+/** Training-focused articles still stored under content/help/launch/ */
+const ACADEMY_LAUNCH_SLUGS = new Set([
+  'training-academy-and-enrollment',
+  'admin-command-center',
+  'checkout-and-payments',
+  'how-to-complete-training-checkout',
+  'how-to-register-for-a-training-course',
+  'how-to-sign-in-to-your-student-or-instructor-portal',
+  'auth-and-portals',
+  'recruiting-and-hr-modules',
+])
 
 /** Minimal frontmatter parser (no eval); our help files use simple key: value YAML. */
 function parseSimpleFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
@@ -37,22 +49,27 @@ function parseSimpleFrontmatter(raw: string): { data: Record<string, unknown>; c
 export const HELP_PRODUCTS: { id: HelpProductId; label: string; description: string }[] = [
   {
     id: 'launch',
-    label: 'Watchman Launch',
-    description: 'Training enrollment, public site, checkout, and academy administration.',
+    label: 'Suite · Launch',
+    description: 'Public website, CMS, careers, services, and the front door to Watchman Suite.',
+  },
+  {
+    id: 'academy',
+    label: 'Suite · Academy',
+    description: 'Training administration, enrollment, attendance, certificates, and DCJS compliance.',
   },
   {
     id: 'operations',
-    label: 'Watchman Operations',
+    label: 'Suite · Operations',
     description: 'Command center, guard field app, scheduling, incidents, DAR, patrol, and client portal.',
   },
   {
     id: 'finance',
-    label: 'Watchman Finance',
+    label: 'Suite · Finance',
     description: 'GL, AR/AP, payroll, banking, integrations, and platform governance.',
   },
   {
     id: 'hr',
-    label: 'Watchman HR',
+    label: 'Suite · HR',
     description: 'Recruiting, onboarding, people records, compensation, and workforce governance.',
   },
 ]
@@ -65,7 +82,6 @@ export interface HelpArticleMeta {
   title: string
   description: string
   order: number
-  /** `how-to` = step-by-step task articles; `guide` = overview/reference (default). */
   kind: HelpArticleKind
   tags?: string[]
   updated?: string
@@ -78,10 +94,25 @@ const rawModules = import.meta.glob<string>('../../content/help/**/*.md', {
   import: 'default',
 })
 
+function resolveProduct(folder: string, slug: string): HelpProductId | null {
+  if (folder === 'operations' || folder === 'finance' || folder === 'hr') {
+    return folder
+  }
+  if (folder === 'launch') {
+    return ACADEMY_LAUNCH_SLUGS.has(slug) ? 'academy' : 'launch'
+  }
+  if (folder === 'academy') {
+    return 'academy'
+  }
+  return null
+}
+
 function parseKey(path: string): { product: HelpProductId; slug: string } | null {
-  const m = path.match(/\/content\/help\/(launch|operations|finance|hr)\/([^/]+)\.md$/)
+  const m = path.match(/\/content\/help\/(launch|academy|operations|finance|hr)\/([^/]+)\.md$/)
   if (!m) return null
-  return { product: m[1] as HelpProductId, slug: m[2] }
+  const product = resolveProduct(m[1], m[2])
+  if (!product) return null
+  return { product, slug: m[2] }
 }
 
 function buildRegistry(): HelpArticleMeta[] {
@@ -96,8 +127,7 @@ function buildRegistry(): HelpArticleMeta[] {
     const tags = Array.isArray(data.tags) ? data.tags.map(String) : undefined
     const updated = typeof data.updated === 'string' ? data.updated : undefined
     const kindRaw = data.kind
-    const kind: HelpArticleKind =
-      kindRaw === 'how-to' ? 'how-to' : 'guide'
+    const kind: HelpArticleKind = kindRaw === 'how-to' ? 'how-to' : 'guide'
     out.push({
       product: parsed.product,
       slug: parsed.slug,
@@ -128,5 +158,5 @@ export function getHelpArticle(product: HelpProductId, slug: string): HelpArticl
 }
 
 export function isHelpProductId(s: string): s is HelpProductId {
-  return s === 'launch' || s === 'operations' || s === 'finance' || s === 'hr'
+  return s === 'launch' || s === 'academy' || s === 'operations' || s === 'finance' || s === 'hr'
 }
