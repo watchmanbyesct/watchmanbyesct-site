@@ -1,10 +1,10 @@
 # Watchman Suite Privacy Policy
 
-Effective Date: June 24, 2026  
+Effective Date: September 13, 2026  
 Product: Watchman Suite  
 Owner: ESCT Holding Inc.  
 Repository: watchmanbyesct/the-new-watchman-suite  
-Version: watchman-suite-privacy-v1.0
+Version: watchman-suite-privacy-v1.1
 
 ## 1. Purpose
 
@@ -17,11 +17,25 @@ Watchman Suite is a multi-tenant security operations suite.
 Depending on configuration and enabled features, Watchman Suite may collect or process the following categories of information:
 
 1. Account information, including name, email address, phone number, user role, tenant organization, login identifiers, account status, and profile settings.
-2. Operational or product data, including tenant profiles, client records, sites, posts, schedules, shifts, guard activity, incident reports, DARs, patrol events, GPS/geofence data, media attachments, audit logs, notifications, billing-support data, compliance records, and administrator settings.
+2. Operational or product data, including tenant profiles, client records, sites, posts, schedules, shifts, guard activity, incident reports, DARs, patrol events, location recorded only while the Watchman Operations app is open if the user allows it, media attachments the user chooses to add, audit logs, notifications, billing-support data, compliance records, and administrator settings.
 3. Device and usage information, including IP address, browser type, device type, operating system, mobile app version, session activity, feature usage, and error or crash logs.
 4. Security and audit data, including login events, permission changes, administrative actions, access attempts, system alerts, and investigation records.
 5. Support information, including messages, screenshots, files, and communications submitted for troubleshooting, training, billing, onboarding, or customer service.
 6. Payment or billing references if payment, subscription, enrollment, or invoicing features are enabled. Full payment card details should be handled by authorized payment processors and should not be stored by Watchman Suite unless explicitly approved through a secure payment architecture.
+
+### Watchman Operations mobile app
+
+This section describes the Watchman Operations iOS app listed on the App Store as Watchman by ESCT. It matches that app binary. Location, camera, microphone, and photo library are not required for the app to function.
+
+**Precise and coarse location.** If you choose Allow While Using the App, the app may collect precise or coarse location only while the app is open. An example is stamping a clock-in at a front gate, or showing a map on screen while you are using the app. The app does not collect location in the background, after you leave the app, or when the app is closed. Location is not required to open the app, clock in, file a report, or use other features. If Location Services are off, or you deny the prompt, the app still works.
+
+**Camera, microphone, and photos or videos.** These are collected only if you choose to take or attach a photo or video, for example a photo of a damaged gate or a short clip of a gate alarm for an incident report or daily activity report. A report can be saved without a photo, video, or audio. These are not required for the app to function.
+
+**User ID and device ID.** The app collects your user ID and a device identifier to sign you in, register the device, and deliver notifications you allow.
+
+**Product interaction.** The app may record operational events such as sync activity so the service can run. This is not used for advertising and is not used to track you across other companies' apps or websites.
+
+The app does not sell this data.
 
 ## 3. How We Use Information
 
@@ -105,7 +119,7 @@ Security: security@watchmanbyesct.com
 1. Create a public route for this document at `/legal/watchman-suite/privacy` or `/privacy/watchman-suite`.
 2. Add footer links to Privacy Policy, Terms of Service, and EULA on public product pages, login pages, install screens, and account settings.
 3. Store this document as `privacy.md` in `legal/watchman-suite/privacy.md` or the product repository equivalent.
-4. Display the version `watchman-suite-privacy-v1.0` and effective date in the UI.
+4. Display the version `watchman-suite-privacy-v1.1` and effective date in the UI.
 5. Require users to accept the current Privacy Policy before account activation, first login, tenant onboarding, mobile/PWA installation, and any material change in legal terms or data use.
 6. Record acceptance in a `legal_acceptances` table with user ID, tenant ID, product name, policy version, accepted timestamp, IP address, user agent, and acceptance source.
 7. Do not overwrite prior acceptance records. Create a new record for each version acceptance.
