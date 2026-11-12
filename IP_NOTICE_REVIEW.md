@@ -14,9 +14,6 @@ Total: **21**
 ### postcss.config.js
 - `postcss.config.js`
 
-### scripts
-- `scripts/generate-integration-health-dashboard.mjs`
-
 ### src
 - `src/App.tsx`
 - `src/config/fieldApp.ts`
